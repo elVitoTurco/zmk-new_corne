@@ -7,7 +7,7 @@ layers:
   - {t: E, h: Sft+ E}
   - {t: R, h: Sft+ R}
   - {t: T, h: Sft+ T}
-  - $$mdi:arrow-up-bold$$
+  - MOVE UP
   - {t: Y, h: Sft+ Y}
   - {t: U, h: Sft+ U}
   - {t: I, h: Sft+ I}
@@ -20,7 +20,7 @@ layers:
   - {t: D, h: Sft+ D}
   - {t: F, h: Sft+ F}
   - {t: G, h: Sft+ G}
-  - $$mdi:arrow-down-bold$$
+  - MOVE DOWN
   - {t: H, h: Sft+ H}
   - {t: J, h: Sft+ J}
   - {t: K, h: Sft+ K}
@@ -33,22 +33,22 @@ layers:
   - {t: C, h: Sft+ C}
   - {t: V, h: Sft+ V}
   - {t: B, h: Sft+ B}
-  - $$mdi:arrow-left-bold$$
+  - MOVE LEFT
   - {t: N, h: Sft+ N}
   - {t: M, h: Sft+ M}
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - {t: /, s: '?'}
   - $$mdi:keyboard-esc$$
-  - $$mdi:keyboard-space$$
+  - $$mdi:mouse-left-click-outline$$
   - LGUI
   - lower
   - {t: '$$mdi:keyboard-space$$', h: '3'}
-  - $$mdi:arrow-right-bold$$
+  - MOVE RIGHT
   - {t: '$$mdi:keyboard-return$$', h: '3'}
   - raise
   - $$mdi:apple-keyboard-option$$
-  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - $$mdi:mouse-right-click-outline$$
   lower:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '1', s: '!'}
