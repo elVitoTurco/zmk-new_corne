@@ -14,7 +14,8 @@ layers:
   - {t: O, h: Sft+ O}
   - {t: P, h: Sft+ P}
   - {t: '$$mdi:backspace$$', type: backspace}
-  - '&td0 RS(A) A'
+  - '&td0'
+  - {t: A, h: Sft+ A}
   - {t: S, h: Sft+ S}
   - {t: D, h: Sft+ D}
   - {t: F, h: Sft+ F}
@@ -26,7 +27,8 @@ layers:
   - {t: L, h: Sft+ L}
   - {t: ;, s: ':'}
   - {t: '''', s: '"'}
-  - LCTRL RS(Z) Z
+  - $$mdi:apple-keyboard-control$$
+  - {t: Z, h: Sft+ Z}
   - {t: X, h: Sft+ X}
   - {t: C, h: Sft+ C}
   - {t: V, h: Sft+ V}
@@ -87,9 +89,9 @@ layers:
   - RGB BRD
   - END
   - PG DN
-  - {t: '$$mdi:volume-off$$', type: held}
+  - $$mdi:volume-off$$
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
   - INS
@@ -140,9 +142,9 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:keyboard-space$$
-  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$', type: held}
+  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:mouse-left-click-outline$$
   '3':
@@ -186,11 +188,11 @@ layers:
   - SCROLLLOCK
   - PAUSE BREAK
   - $$mdi:volume-off$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held alternate}
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held alternate}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:mouse-left-click-outline$$
