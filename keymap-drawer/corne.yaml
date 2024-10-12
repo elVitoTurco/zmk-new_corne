@@ -3,39 +3,37 @@ layers:
   default:
   - $$mdi:keyboard-tab$$
   - {t: Q, h: Sft+ Q}
-  - W
-  - E
-  - R
-  - T
+  - {t: W, h: Sft+ W}
+  - {t: E, h: Sft+ E}
+  - {t: R, h: Sft+ R}
+  - {t: T, h: Sft+ T}
   - $$mdi:arrow-up-bold$$
-  - Y
-  - U
-  - I
-  - O
-  - P
+  - {t: Y, h: Sft+ Y}
+  - {t: U, h: Sft+ U}
+  - {t: I, h: Sft+ I}
+  - {t: O, h: Sft+ O}
+  - {t: P, h: Sft+ P}
   - {t: '$$mdi:backspace$$', type: backspace}
-  - '&td0'
-  - A
-  - S
-  - D
-  - F
-  - G
+  - '&td0 RS(A) A'
+  - {t: S, h: Sft+ S}
+  - {t: D, h: Sft+ D}
+  - {t: F, h: Sft+ F}
+  - {t: G, h: Sft+ G}
   - $$mdi:arrow-down-bold$$
-  - H
-  - J
-  - K
-  - L
+  - {t: H, h: Sft+ H}
+  - {t: J, h: Sft+ J}
+  - {t: K, h: Sft+ K}
+  - {t: L, h: Sft+ L}
   - {t: ;, s: ':'}
   - {t: '''', s: '"'}
-  - $$mdi:apple-keyboard-control$$
-  - Z
-  - X
-  - C
-  - V
-  - B
+  - LCTRL RS(Z) Z
+  - {t: X, h: Sft+ X}
+  - {t: C, h: Sft+ C}
+  - {t: V, h: Sft+ V}
+  - {t: B, h: Sft+ B}
   - $$mdi:arrow-left-bold$$
-  - N
-  - M
+  - {t: N, h: Sft+ N}
+  - {t: M, h: Sft+ M}
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - {t: /, s: '?'}
@@ -89,9 +87,9 @@ layers:
   - RGB BRD
   - END
   - PG DN
-  - $$mdi:volume-off$$
+  - {t: '$$mdi:volume-off$$', type: held}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
   - INS
@@ -142,9 +140,9 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:keyboard-space$$
-  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
+  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$', type: held}
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:mouse-left-click-outline$$
   '3':
@@ -188,11 +186,11 @@ layers:
   - SCROLLLOCK
   - PAUSE BREAK
   - $$mdi:volume-off$$
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
-  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {type: held alternate}
+  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:mouse-left-click-outline$$
