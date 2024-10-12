@@ -1,39 +1,39 @@
 layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x6_3}
 layers:
   default:
-  - $$mdi:keyboard-tab$$
+  - $$mdi:keyboard-esc$$
   - {t: Q, h: Sft+ Q}
   - {t: W, h: Sft+ W}
   - {t: E, h: Sft+ E}
   - {t: R, h: Sft+ R}
   - {t: T, h: Sft+ T}
-  - MOVE UP
+  - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
   - {t: Y, h: Sft+ Y}
   - {t: U, h: Sft+ U}
   - {t: I, h: Sft+ I}
   - {t: O, h: Sft+ O}
   - {t: P, h: Sft+ P}
   - {t: '$$mdi:backspace$$', type: backspace}
-  - '&td0'
+  - $$mdi:keyboard-tab$$
   - {t: A, h: Sft+ A}
   - {t: S, h: Sft+ S}
   - {t: D, h: Sft+ D}
   - {t: F, h: Sft+ F}
   - {t: G, h: Sft+ G}
-  - MOVE DOWN
+  - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - {t: H, h: Sft+ H}
   - {t: J, h: Sft+ J}
   - {t: K, h: Sft+ K}
   - {t: L, h: Sft+ L}
   - {t: ;, s: ':'}
-  - {t: '''', s: '"'}
-  - $$mdi:apple-keyboard-control$$
+  - RETURN
+  - $$mdi:apple-keyboard-shift$$
   - {t: Z, h: Sft+ Z}
   - {t: X, h: Sft+ X}
   - {t: C, h: Sft+ C}
   - {t: V, h: Sft+ V}
   - {t: B, h: Sft+ B}
-  - MOVE LEFT
+  - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - {t: N, h: Sft+ N}
   - {t: M, h: Sft+ M}
   - {t: ',', s: <}
@@ -41,12 +41,12 @@ layers:
   - {t: /, s: '?'}
   - $$mdi:keyboard-esc$$
   - $$mdi:mouse-left-click-outline$$
-  - LGUI
-  - lower
-  - {t: '$$mdi:keyboard-space$$', h: '3'}
-  - MOVE RIGHT
+  - {t: '$$mdi:apple-keyboard-control$$', h: '$$mdi:gesture-tap-hold$$'}
+  - {t: '$$mdi:keyboard-space$$', h: lower}
+  - $$mdi:apple-keyboard-command$$
+  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
   - {t: '$$mdi:keyboard-return$$', h: '3'}
-  - raise
+  - {t: '$$mdi:keyboard-space$$', h: raise}
   - $$mdi:apple-keyboard-option$$
   - $$mdi:mouse-right-click-outline$$
   lower:
@@ -190,9 +190,9 @@ layers:
   - $$mdi:volume-off$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
-  - {type: held alternate}
+  - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:mouse-left-click-outline$$
