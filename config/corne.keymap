@@ -100,6 +100,9 @@
                     Project 
 
 
+                    put on the first thumb key a layer of intellij stuff
+
+
             */
 
 
@@ -114,10 +117,10 @@
             /* BASE
                Contains autoshift and querty characters
                ╭─────────────────────────────────────────╮    ╭──────╮╭─────────────────────────────────────────╮
-               | TAB  |  Q   |  W   |  E   |   R  |   T  |    |  ↑   ||  Y   |  U   |  I   |  O   |  P   | BKSP |  
-               | SHIFT|  A   |  S   |  D   |   F  |   G  |    |  ↓   ||  H   |  J   |  K   |  L   |  ;   |  '   | 
-               | CTRL |  Z   |  X   |  C   |   V  |   B  |    |  ←   ||  N   |  M   |  ,   |  .   |  /   | ESC  |
-               ╰────────────────────╮  GUI | NUM  | SPC  |    |  →   || ENT  |  RS  | ALT  ╭────────────────────╯ 
+               | ESC  |  Q   |  W   |  E   |   R  |   T  |    |  ↑   ||  Y   |  U   |  I   |  O   |  P   | BKSP |  
+               | TAB  |  A   |  S   |  D   |   F  |   G  |    |  ↓   ||  H   |  J   |  K   |  L   |  ;   |  '   | 
+               | SHIFT|  Z   |  X   |  C   |   V  |   B  |    |  ←   ||  N   |  M   |  ,   |  .   |  /   | ESC  |
+               ╰────────────────────╮STCTRL|  SPC |  GUI |    |  →   || ENT  |  RS  | ALT  ╭────────────────────╯ 
                                     ╰────────────────────╯    | ENT  |╰────────────────────╯
                                                               ╰──────╯                       
             */
@@ -125,11 +128,11 @@
                 &kp ESC             &mt RS(Q) Q         &mt RS(W) W           &mt RS(E) E        &mt RS(R) R        &mt RS(T) T          &mmv MOVE_UP                 &mt RS(Y) Y             &mt RS(U) U     &mt RS(I) I         &mt RS(O) O         &mt RS(P) P         &kp BSPC
                 &kp TAB             &mt RS(A) A         &mt RS(S) S           &mt RS(D) D        &mt RS(F) F        &mt RS(G) G          &mmv MOVE_DOWN               &mt RS(H) H             &mt RS(J) J     &mt RS(K) K         &mt RS(L) L         &kp SEMI            &kp RETURN
                 &kp LSHIFT          &mt RS(Z) Z         &mt RS(X) X           &mt RS(C) C        &mt RS(V) V        &mt RS(B) B          &mmv MOVE_LEFT               &mt RS(N) N             &mt RS(M) M     &comma_comma        &dot_dot            &kp FSLH            &kp BSPC
-                                                        &mkp LCLK             &sk LEFT_CONTROL   &lt 1 SPACE        &kp LEFT_GUI         &mmv MOVE_RIGHT              &lt 3 ENTER             &lt 2 SPACE     &kp RALT
+                                                        &mkp LCLK             &sk LEFT_CONTROL   &lt 1 SPACE        &kp LEFT_GUI         &mmv MOVE_RIGHT              &lt 2 SPACE             &lt 2 SPACE     &kp RALT
                                                                                                                                          &mkp RCLK
             >;
 
-            label = "BASE";
+            label = "QWERTY";
             sensor-bindings = <&scroll_encoder>;
         };
 
@@ -145,17 +148,18 @@
                ╰────────────────────╮  GUI | NUM  | SPC  |    |  →   || ENT  |  RS  | ALT  ╭────────────────────╯ 
                                     ╰────────────────────╯    | ENT  |╰────────────────────╯
                                                               ╰──────╯                       
+                                                     ╰──────╯                       
             */
 
                 bindings = <
-                &kp ESC             &none               &mkp LCLK             &mmv MOVE_UP       &mkp RCLK          &none                &kp K_VOL_UP            &mwh SCROLL_UP          &none                 &mwh SCROLL_DOWN         &none               &none            &kp BSPC
+                &kp ESC             &none               &mkp LCLK             &mmv MOVE_UP       &mkp RCLK          &none                &kp K_VOL_UP            &mwh SCROLL_UP          &none                 &mwh SCROLL_DOWN         &none               &none             &kp BSPC
                 &kp TAB             &none               &mmv MOVE_LEFT        &mmv MOVE_DOWN     &mmv MOVE_RIGHT    &none                &kp K_VOL_DN            &none                   &none                 &none                    &none               &none            &kp RETURN
                 &kp LSHIFT          &none               &none                 &kp LA(LEFT)       &kp LA(RIGHT)      &none                &kp K_MUTE              &kp LC(PAGE_UP)         &kp LC(PAGE_DOWN)     &none                    &dot_dot            &none            &kp BSPC
                                                         &mkp LCLK             &mkp RCLK          &mkp LCLK          &mkp MCLK            &none                   &none                   &none
                                                                                                                                          &mkp RCLK
             >;
 
-            label = "MOUSE";
+            label = "NUMBER";
             sensor-bindings = <&scroll_encoder>;
         };
 
