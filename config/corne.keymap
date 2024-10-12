@@ -33,6 +33,39 @@
             time-to-max-speed-ms = <400>;      // 500
             delay-ms = <0>;                   // 10
         };
+
+        open_symbol: td_open {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_OPEN";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp RS(RIGHT_BRACKET)>, <&kp RS(NUMBER_9)>, <&kp RIGHT_BRACKET>, <&kp LT>;
+        };
+
+        close_symbol: td_close {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_CLOSE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp RS(BACKSLASH)>, <&kp RS(NUMBER_0)>, <&kp BACKSLASH>, <&kp GT>;
+        };
+
+        dot_dot: dot_dot {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DOT_DOT";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp PERIOD>, <&kp LS(SLASH)>;
+        };
+
+        comma_comma: comma_comma {
+            compatible = "zmk,behavior-tap-dance";
+            label = "COMMA_COMMA";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp COMMA>, <&kp SLASH>;
+        };
+
     };
 
     rgb_encoder: rgb_encoder {
@@ -49,6 +82,28 @@
 
         tap-ms = <30>;
     };
+
+
+            /* To ADD
+                Window management ?
+                Intelij shortcuts
+                    Maven       M
+                        Clean   C
+                        Install I
+                    Database    D
+                    Editor      E
+                    Debug       D
+                        Run
+                        Terminal
+                        Breakpoints
+                    Terminal    T
+                    Project 
+
+
+            */
+
+
+
 
     keymap {
         compatible = "zmk,keymap";
@@ -67,10 +122,10 @@
                                                               ╰──────╯                       
             */
                 bindings = <
-                &kp TAB             &mt RS(Q) Q         &mt RS(W) W           &mt RS(E) E        &mt RS(R) R        &mt RS(T) T          &kp MOVE_UP                 &mt RS(Y) Y             &mt RS(U) U     &mt RS(I) I         &mt RS(O) O         &mt RS(P) P         &kp BSPC
-                &td0                &mt RS(A) A         &mt RS(S) S           &mt RS(D) D        &mt RS(F) F        &mt RS(G) G          &kp MOVE_DOWN               &mt RS(H) H             &mt RS(J) J     &mt RS(K) K         &mt RS(L) L         &kp SEMI            &kp SQT
-                &kp LCTRL           &mt RS(Z) Z         &mt RS(X) X           &mt RS(C) C        &mt RS(V) V        &mt RS(B) B          &kp MOVE_LEFT               &mt RS(N) N             &mt RS(M) M     &kp COMMA           &kp DOT             &kp FSLH            &kp ESC
-                                                        &mkp LCLK             &kp LGUI           &mo 1              &lt 3 SPACE          &kp MOVE_RIGHT              &lt 3 ENTER  &mo 2      &kp RALT
+                &kp ESC             &mt RS(Q) Q         &mt RS(W) W           &mt RS(E) E        &mt RS(R) R        &mt RS(T) T          &mmv MOVE_UP                 &mt RS(Y) Y             &mt RS(U) U     &mt RS(I) I         &mt RS(O) O         &mt RS(P) P         &kp BSPC
+                &kp TAB             &mt RS(A) A         &mt RS(S) S           &mt RS(D) D        &mt RS(F) F        &mt RS(G) G          &mmv MOVE_DOWN               &mt RS(H) H             &mt RS(J) J     &mt RS(K) K         &mt RS(L) L         &kp SEMI            &kp RETURN
+                &kp LSHIFT          &mt RS(Z) Z         &mt RS(X) X           &mt RS(C) C        &mt RS(V) V        &mt RS(B) B          &mmv MOVE_LEFT               &mt RS(N) N             &mt RS(M) M     &kp COMMA           &kp DOT             &kp FSLH            &kp ESC
+                                                        &mkp LCLK             &sk LEFT_CONTROL   &lt 1 SPACE        &kp LEFT_GUI         &mmv MOVE_RIGHT              &lt 3 ENTER             &lt 2 SPACE     &kp RALT
                                                                                                                                          &mkp RCLK
             >;
 
