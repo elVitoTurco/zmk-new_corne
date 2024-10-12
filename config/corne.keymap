@@ -67,11 +67,11 @@
                                                               ╰──────╯                       
             */
                 bindings = <
-                &kp TAB             &mt RS(Q) Q         &mt RS(W) W           &mt RS(E) E        &mt RS(R) R        &mt RS(T) T          &kp UP_ARROW                 &mt RS(Y) Y             &mt RS(U) U     &mt RS(I) I         &mt RS(O) O         &mt RS(P) P         &kp BSPC
-                &td0                &mt RS(A) A         &mt RS(S) S           &mt RS(D) D        &mt RS(F) F        &mt RS(G) G          &kp DOWN_ARROW               &mt RS(H) H             &mt RS(J) J     &mt RS(K) K         &mt RS(L) L         &kp SEMI            &kp SQT
-                &kp LCTRL           &mt RS(Z) Z         &mt RS(X) X           &mt RS(C) C        &mt RS(V) V        &mt RS(B) B          &kp LEFT_ARROW               &mt RS(N) N             &mt RS(M) M     &kp COMMA           &kp DOT             &kp FSLH            &kp ESC
-                                                        &kp SPACE             &kp LGUI           &mo 1              &lt 3 SPACE          &kp RIGHT_ARROW              &lt 3 ENTER  &mo 2      &kp RALT
-                                                                                                                                         &kp ENTER
+                &kp TAB             &mt RS(Q) Q         &mt RS(W) W           &mt RS(E) E        &mt RS(R) R        &mt RS(T) T          &kp MOVE_UP                 &mt RS(Y) Y             &mt RS(U) U     &mt RS(I) I         &mt RS(O) O         &mt RS(P) P         &kp BSPC
+                &td0                &mt RS(A) A         &mt RS(S) S           &mt RS(D) D        &mt RS(F) F        &mt RS(G) G          &kp MOVE_DOWN               &mt RS(H) H             &mt RS(J) J     &mt RS(K) K         &mt RS(L) L         &kp SEMI            &kp SQT
+                &kp LCTRL           &mt RS(Z) Z         &mt RS(X) X           &mt RS(C) C        &mt RS(V) V        &mt RS(B) B          &kp MOVE_LEFT               &mt RS(N) N             &mt RS(M) M     &kp COMMA           &kp DOT             &kp FSLH            &kp ESC
+                                                        &mkp LCLK             &kp LGUI           &mo 1              &lt 3 SPACE          &kp MOVE_RIGHT              &lt 3 ENTER  &mo 2      &kp RALT
+                                                                                                                                         &mkp RCLK
             >;
 
             label = "QWERTY";
