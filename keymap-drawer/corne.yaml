@@ -36,10 +36,10 @@ layers:
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - {t: N, h: Sft+ N}
   - {t: M, h: Sft+ M}
-  - {t: ',', s: <}
-  - {t: ., s: '>'}
+  - '&comma_comma'
+  - '&dot_dot'
   - {t: /, s: '?'}
-  - $$mdi:keyboard-esc$$
+  - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:apple-keyboard-control$$', h: '$$mdi:gesture-tap-hold$$'}
   - {t: '$$mdi:keyboard-space$$', h: lower}
