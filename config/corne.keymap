@@ -19,9 +19,8 @@
 #define MOUSE 1
 #define NAVIGATION 2
 #define NUMBERS 3
-#define NUMBERS 4
-#define WINDOW_MANAGER 5
-#define MODIFIERS 6
+#define INTELLIJ 4
+
 
 
 
@@ -125,7 +124,7 @@
 
 
                     put on the first thumb key a layer of intellij stuff
-
+    
             */
 
 
@@ -151,8 +150,8 @@
                 &kp ESC             &mt RS(Q) Q         &mt RS(W) W           &mt RS(E) E        &mt RS(R) R        &mt RS(T) T          &mmv MOVE_UP                 &mt RS(Y) Y             &mt RS(U) U     &mt RS(I) I         &mt RS(O) O         &mt RS(P) P         &kp BSPC
                 &kp TAB             &mt RS(A) A         &mt RS(S) S           &mt RS(D) D        &mt RS(F) F        &mt RS(G) G          &mmv MOVE_DOWN               &mt RS(H) H             &mt RS(J) J     &mt RS(K) K         &mt RS(L) L         &kp SEMI            &kp RETURN
                 &kp LSHIFT          &mt RS(Z) Z         &mt RS(X) X           &mt RS(C) C        &mt RS(V) V        &mt RS(B) B          &mmv MOVE_LEFT               &mt RS(N) N             &mt RS(M) M     &comma_comma        &dot_dot            &kp FSLH            &kp BSPC
-                                                        &mkp LCLK             &sk LEFT_CONTROL   &lt NUMBERS SPACE  &kp LEFT_GUI         &mmv MOVE_RIGHT              &lt MOUSE SPACE             &lt NAVIGATION SPACE     &kp RALT
-                                                                                                                                         &mkp RCLK
+                                                        &mkp RCLK             &sk LEFT_CONTROL   &lt 3 SPACE        &kp LEFT_GUI         &mmv MOVE_RIGHT              &lt MOUSE SPACE         &lt NAVIGATION SPACE     &lt MOUSE SPACE
+                                                                                                                                         &mkp LCLK
             >;
 
             label = "QWERTY";
@@ -209,10 +208,10 @@
             */
 
                 bindings = <
-                &kp ESC             &none               &kp PAGE_DOWN         &kp UP              &kp PAGE_UP        &none                &mmv MOVE_UP                 &kp K_VOL_UP            &msc SCRL_UP         &none                     &msc SCRL_DOWN           &none            &kp BSPC
-                &kp TAB             &none               &kp LEFT              &kp DOWN            &kp RIGHT          &none                &mmv MOVE_DOWN               &kp K_VOL_DN            &none                &none                     &none                    &none            &kp RETURN
+                &kp ESC             &none               &kp PAGE_DOWN         &kp UP              &kp PAGE_UP        &none                &mmv MOVE_UP                 &kp K_VOL_UP            &msc SCRL_UP         &msc SCRL_DOWN            &msc SCRL_DOWN           &none            &kp BSPC
+                &kp TAB             &none               &kp LEFT              &kp DOWN            &kp RIGHT          &none                &mmv MOVE_DOWN               &kp K_VOL_DN            kp LEFT_SHIFT        &kp LEFT_CONTROL          &kp LALT                 &none            &kp RETURN
                 &kp LSHIFT          &kp Z               &kp X                 &kp C               &kp V              &none                &mmv MOVE_LEFT               &none                   &kp LC(PAGE_UP)      &kp LC(PAGE_DOWN)         &none                    &none            &kp BSPC
-                                                        &mkp LCLK             &mkp RCLK           &mkp LCLK          &mkp MCLK            &mmv MOVE_RIGHT              &mkp RCLK               &none                &none
+                                                        &mkp LCLK             &kp LEFT_CONTROL    &kp LEFT_GUI       &mkp MCLK            &mmv MOVE_RIGHT              &mkp RCLK               &none                &none
                                                                                                                                           &mkp RCLK
             >;
             label = "NAV";
@@ -249,8 +248,5 @@
         };
 
 
-
-
-  
     };
 };
