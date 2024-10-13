@@ -165,7 +165,7 @@
             */
 
                 bindings = <
-                &kp ESC             &none               &mkp LCLK             &mmv MOVE_UP        &mkp RCLK          &none                &mmv MOVE_UP                 &kp K_VOL_UP            &msc SCRL_UP         &none                     &mwh SCROLL_DOWN         &none            &kp BSPC
+                &kp ESC             &none               &mkp LCLK             &mmv MOVE_UP        &mkp RCLK          &none                &mmv MOVE_UP                 &kp K_VOL_UP            &msc SCRL_UP         &none                     &msc SCRL_DOWN           &none            &kp BSPC
                 &kp TAB             &none               &mmv MOVE_LEFT        &mmv MOVE_DOWN      &mmv MOVE_RIGHT    &none                &mmv MOVE_DOWN               &kp K_VOL_DN            &none                &none                     &none                    &none            &kp RETURN
                 &kp LSHIFT          &none               &none                 &kp LA(LEFT)        &kp LA(RIGHT)      &none                &mmv MOVE_LEFT               &none                   &kp LC(PAGE_UP)      &kp LC(PAGE_DOWN)         &none                    &none            &kp BSPC
                                                         &mkp LCLK             &mkp RCLK           &mkp LCLK          &mkp MCLK            &mmv MOVE_RIGHT              &mkp RCLK               &none                &none
