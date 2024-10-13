@@ -54,7 +54,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
-  - {t: R, h: Sft+ R}
+  - $$mdi:mouse-right-click-outline$$
   - {t: T, h: Sft+ T}
   - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
   - {t: Y, h: Sft+ Y}
@@ -67,7 +67,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
-  - {t: F, h: Sft+ F}
+  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
   - {t: G, h: Sft+ G}
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - {t: H, h: Sft+ H}
@@ -80,7 +80,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - Alt+ $$mdi:arrow-left-bold$$
-  - {t: V, h: Sft+ V}
+  - Alt+ $$mdi:arrow-right-bold$$
   - {t: B, h: Sft+ B}
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - {t: N, h: Sft+ N}
@@ -91,7 +91,7 @@ layers:
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:mouse-left-click-outline$$
   - $$mdi:mouse-right-click-outline$$
-  - {t: '$$mdi:keyboard-space$$', h: mouse, type: held}
+  - {t: '$$mdi:mouse-left-click-outline$$', type: held}
   - $$mdi:apple-keyboard-command$$
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
   - {t: '$$mdi:keyboard-space$$', h: raise}
