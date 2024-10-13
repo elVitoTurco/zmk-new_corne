@@ -22,6 +22,9 @@
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
         };
 
+        &mwh {
+            acceleration-exponent=<1>;
+        };
         mmv {
             acceleration-exponent = <1>;      // 1
             time-to-max-speed-ms = <900>;    // 40
