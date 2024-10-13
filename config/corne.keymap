@@ -183,6 +183,7 @@
 
 
 
+
         navigation_layer {
             display-name = "NAV";
 
@@ -212,24 +213,28 @@
 
 
 
-        raise_layer {
-            display-name = "SYMBOL";
+        numbers_layer {
+            display-name = "NUMBER";
 
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
+           /* BASE
+               Contains autoshift and querty characters
+               ╭─────────────────────────────────────────╮    ╭──────╮╭─────────────────────────────────────────╮
+               | TAB  |  Q   |  W   |  E   |   R  |   T  |    |  ↑   ||  Y   |  U   |  I   |  O   |  P   | BKSP |  
+               | SHIFT|  A   |  S   |  D   |   F  |   G  |    |  ↓   ||  H   |  J   |  K   |  L   |  ;   |  '   | 
+               | CTRL |  Z   |  X   |  C   |   V  |   B  |    |  ←   ||  N   |  M   |  ,   |  .   |  /   | ESC  |
+               ╰────────────────────╮  GUI | NUM  | SPC  |    |  →   || ENT  |  RS  | ALT  ╭────────────────────╯ 
+                                    ╰────────────────────╯    | ENT  |╰────────────────────╯
+                                                              ╰──────╯                                           
+            */
 
-            bindings = <
-&trans  &kp EXCL      &kp AT        &kp HASH   &kp DLLR   &kp PRCNT    &mmv MOVE_UP     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&trans  &bt BT_CLR    &mkp LCLK     &mkp MCLK  &mkp RCLK  &mkp MB4     &mmv MOVE_DOWN   &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&trans  &out OUT_USB  &out OUT_BLE  &none      &none      &mkp MB5     &mmv MOVE_LEFT   &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                      &trans        &trans     &trans     &kp SPACE    &mmv MOVE_RIGHT  &kp RET    &trans     &trans
-                                                                       &mkp LCLK
+                bindings = <
+                &kp ESC             &mt EXCLAMATION NUMBER_1  &mt AT_SIGN NUMBER_2  &mt HASH NUMBER_3      &mt DOLLAR NUMBER_4      &mt PERCENT NUMBER_5   &mmv MOVE_UP                 &mt CARET NUMBER_6      &mt AMPERSAND NUMBER_7   &mt ASTERISK NUMBER_8     &mt LEFT_PARENTHESIS NUMBER_9    &mt RIGHT_PARENTHESIS NUMBER_0             &kp BSPC
+                &kp TAB             &none                     &kp LEFT              &kp DOWN               &kp RIGHT                &none                  &mmv MOVE_DOWN               &kp K_VOL_DN            &none                    &none                     &none                            &none                                      &kp RETURN
+                &kp LSHIFT          &kp Z                     &kp X                 &kp C                  &kp V                    &none                  &mmv MOVE_LEFT               &none                   &kp LC(PAGE_UP)          &kp LC(PAGE_DOWN)         &none                            &none                                      &kp BSPC
+                                                              &mkp LCLK             &mkp RCLK              &mkp LCLK                &mkp MCLK              &mmv MOVE_RIGHT              &mkp RCLK               &none                    &none
+                                                                                                                                                           &mkp RCLK
             >;
-
-            label = "SYMBOL";
+            label = "NUMBER";
             sensor-bindings = <&scroll_encoder>;
         };
 
