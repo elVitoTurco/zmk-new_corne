@@ -14,6 +14,17 @@
 #define U_MS_R &mmv MOVE_RIGHT
 
 
+
+#define BASE 0
+#define MOUSE 1
+#define NAVIGATION 2
+#define NUMBERS 3
+#define NUMBERS 4
+#define WINDOW_MANAGER 5
+#define MODIFIERS 6
+
+
+
 &mmv {
 	time-to-max-speed-ms = <300>;
 };
@@ -96,7 +107,6 @@
 
 
             /* To ADD
-                Window management ?
                 Intelij shortcuts
                     Maven       M
                         Clean   C
@@ -241,19 +251,6 @@
 
 
 
-
-        layer_3 {
-            display-name = "Fn";
-            bindings = <
-&trans  &kp F1      &kp F2      &kp F3       &kp F4     &kp F5      &mmv MOVE_UP     &kp F6       &kp F7     &kp F8       &kp F9      &kp F10          &kp F11
-&trans  &trans      &mkp LCLK   &mkp MCLK    &mkp RCLK  &mkp MB4    &mmv MOVE_DOWN   &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &kp PRINTSCREEN  &kp F12
-&trans  &sys_reset  &trans      &bootloader  &trans     &mkp MB5    &mmv MOVE_LEFT   &trans       &trans     &bootloader  &sys_reset  &kp SCROLLLOCK   &kp PAUSE_BREAK
-                    &kp C_MUTE  &trans       &trans     &trans      &mmv MOVE_RIGHT  &trans       &trans     &trans
-                                                                    &mkp LCLK
-            >;
-
-            label = "FN";
-            sensor-bindings = <&scroll_encoder>;
         };
     };
 };
