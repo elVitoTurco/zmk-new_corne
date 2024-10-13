@@ -168,10 +168,10 @@ layers:
   - {t: ;, h: '$$mdi:apple-keyboard-shift$$', s: ':'}
   - KP SLASH
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
-  - VOL DN
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-caps$$
+  - '&open_symbol'
+  - '&close_symbol'
+  - {t: _, h: '-'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - RETURN
   - F1
