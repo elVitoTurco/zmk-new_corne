@@ -18,6 +18,11 @@
 	time-to-max-speed-ms = <300>;
 };
 
+&mt {
+	tapping-term-ms = <300>;
+	flavor = "tap-preferred";
+};
+
 
 / {
     behaviors {
