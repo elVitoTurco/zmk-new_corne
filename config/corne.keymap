@@ -100,6 +100,9 @@
                     Project 
 
 
+                    easy home and end
+
+
                     put on the first thumb key a layer of intellij stuff
 
             */
@@ -184,15 +187,17 @@
             */
 
                 bindings = <
-                &kp ESC             &none               &mkp LCLK             &mmv MOVE_UP        &mkp RCLK          &none                &mmv MOVE_UP                 &kp K_VOL_UP            &msc SCRL_UP         &none                     &msc SCRL_DOWN           &none            &kp BSPC
-                &kp TAB             &none               &mmv MOVE_LEFT        &mmv MOVE_DOWN      &mmv MOVE_RIGHT    &none                &mmv MOVE_DOWN               &kp K_VOL_DN            &none                &none                     &none                    &none            &kp RETURN
-                &kp LSHIFT          &none               &none                 &kp LA(LEFT)        &kp LA(RIGHT)      &none                &mmv MOVE_LEFT               &none                   &kp LC(PAGE_UP)      &kp LC(PAGE_DOWN)         &none                    &none            &kp BSPC
+                &kp ESC             &none               &kp PAGE_DOWN         &kp UP              &kp PAGE_UP        &none                &mmv MOVE_UP                 &kp K_VOL_UP            &msc SCRL_UP         &none                     &msc SCRL_DOWN           &none            &kp BSPC
+                &kp TAB             &none               &kp LEFT              &kp DOWN            &kp RIGHT          &none                &mmv MOVE_DOWN               &kp K_VOL_DN            &none                &none                     &none                    &none            &kp RETURN
+                &kp LSHIFT          &kp Z               &kp X                 &kp C               &kp V              &none                &mmv MOVE_LEFT               &none                   &kp LC(PAGE_UP)      &kp LC(PAGE_DOWN)         &none                    &none            &kp BSPC
                                                         &mkp LCLK             &mkp RCLK           &mkp LCLK          &mkp MCLK            &mmv MOVE_RIGHT              &mkp RCLK               &none                &none
                                                                                                                                           &mkp RCLK
             >;
             label = "NAV";
             sensor-bindings = <&scroll_encoder>;
         };
+
+
 
 
 
