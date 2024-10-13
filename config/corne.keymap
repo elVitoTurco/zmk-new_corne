@@ -102,16 +102,6 @@
 
                     put on the first thumb key a layer of intellij stuff
 
-
-      bindings = <
-                &kp ESC             &none               &mkp LCLK             &mmv MOVE_UP       &mkp RCLK          &none                &kp K_VOL_UP            &mwh SCROLL_UP          &none                 &mwh SCROLL_DOWN         &none               &none            &kp BSPC
-                &kp TAB             &none               &mmv MOVE_LEFT        &mmv MOVE_DOWN     &mmv MOVE_RIGHT    &none                &kp K_VOL_DN            &none                   &none                 &none                    &none               &none            &kp RETURN
-                &kp LSHIFT          &none               &none                 &kp LA(LEFT)       &kp LA(RIGHT)      &none                &kp K_MUTE              &kp LC(PAGE_UP)         &kp LC(PAGE_DOWN)     &none                    &dot_dot            &none            &kp BSPC
-                                                        &mkp LCLK             &mkp RCLK          &mkp LCLK          &mkp MCLK            &none                   &none                   &none
-                                                                                                                                         &mkp RCLK
-            >;
-
-
             */
 
 
@@ -153,8 +143,8 @@
         mouse_layer {
             display-name = "MOUSE";
 
-           /* BASE
-               Contains autoshift and querty characters
+           /* MOUSE
+               Move mouse and navigation shortcuts
                ╭─────────────────────────────────────────╮    ╭──────╮╭─────────────────────────────────────────╮
                | TAB  |  Q   |  W   |  E   |   R  |   T  |    |  ↑   ||  Y   |  U   |  I   |  O   |  P   | BKSP |  
                | SHIFT|  A   |  S   |  D   |   F  |   G  |    |  ↓   ||  H   |  J   |  K   |  L   |  ;   |  '   | 
@@ -178,6 +168,31 @@
 
 
 
+
+        navigation_layer {
+            display-name = "NAV";
+
+           /* BASE
+               Contains autoshift and querty characters
+               ╭─────────────────────────────────────────╮    ╭──────╮╭─────────────────────────────────────────╮
+               | TAB  |  Q   |  W   |  E   |   R  |   T  |    |  ↑   ||  Y   |  U   |  I   |  O   |  P   | BKSP |  
+               | SHIFT|  A   |  S   |  D   |   F  |   G  |    |  ↓   ||  H   |  J   |  K   |  L   |  ;   |  '   | 
+               | CTRL |  Z   |  X   |  C   |   V  |   B  |    |  ←   ||  N   |  M   |  ,   |  .   |  /   | ESC  |
+               ╰────────────────────╮  GUI | NUM  | SPC  |    |  →   || ENT  |  RS  | ALT  ╭────────────────────╯ 
+                                    ╰────────────────────╯    | ENT  |╰────────────────────╯
+                                                              ╰──────╯                                           
+            */
+
+                bindings = <
+                &kp ESC             &none               &mkp LCLK             &mmv MOVE_UP        &mkp RCLK          &none                &mmv MOVE_UP                 &kp K_VOL_UP            &msc SCRL_UP         &none                     &msc SCRL_DOWN           &none            &kp BSPC
+                &kp TAB             &none               &mmv MOVE_LEFT        &mmv MOVE_DOWN      &mmv MOVE_RIGHT    &none                &mmv MOVE_DOWN               &kp K_VOL_DN            &none                &none                     &none                    &none            &kp RETURN
+                &kp LSHIFT          &none               &none                 &kp LA(LEFT)        &kp LA(RIGHT)      &none                &mmv MOVE_LEFT               &none                   &kp LC(PAGE_UP)      &kp LC(PAGE_DOWN)         &none                    &none            &kp BSPC
+                                                        &mkp LCLK             &mkp RCLK           &mkp LCLK          &mkp MCLK            &mmv MOVE_RIGHT              &mkp RCLK               &none                &none
+                                                                                                                                          &mkp RCLK
+            >;
+            label = "NAV";
+            sensor-bindings = <&scroll_encoder>;
+        };
 
 
 
