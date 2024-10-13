@@ -165,10 +165,10 @@
             */
 
                 bindings = <
-                &kp ESC             &none               &mkp LCLK           &mt RS(E) E        &mt RS(R) R        &mt RS(T) T          &mmv MOVE_UP                 &mt RS(Y) Y             &mt RS(U) U     &mt RS(I) I         &mt RS(O) O         &mt RS(P) P         &kp BSPC
-                &kp TAB             &none               &mt RS(S) S           &mt RS(D) D        &mt RS(F) F        &mt RS(G) G          &mmv MOVE_DOWN               &mt RS(H) H             &mt RS(J) J     &mt RS(K) K         &mt RS(L) L         &kp SEMI            &kp RETURN
-                &kp LSHIFT          &none               &mt RS(X) X           &mt RS(C) C        &mt RS(V) V        &mt RS(B) B          &mmv MOVE_LEFT               &mt RS(N) N             &mt RS(M) M     &comma_comma        &dot_dot            &kp FSLH            &kp BSPC
-                                                        &mkp LCLK             &sk LEFT_CONTROL   &lt 1 SPACE        &kp LEFT_GUI         &mmv MOVE_RIGHT              &lt 2 SPACE             &lt 2 SPACE     &kp RALT
+                &kp ESC             &none               &mkp LCLK             &mmv MOVE_UP        &mt RS(R) R        &mt RS(T) T          &mmv MOVE_UP                 &mt RS(Y) Y             &mt RS(U) U     &mt RS(I) I         &mt RS(O) O         &mt RS(P) P         &kp BSPC
+                &kp TAB             &none               &mmv MOVE_LEFT        &mmv MOVE_DOWN      &mt RS(F) F        &mt RS(G) G          &mmv MOVE_DOWN               &mt RS(H) H             &mt RS(J) J     &mt RS(K) K         &mt RS(L) L         &kp SEMI            &kp RETURN
+                &kp LSHIFT          &none               &none                 &kp LA(LEFT)        &mt RS(V) V        &mt RS(B) B          &mmv MOVE_LEFT               &mt RS(N) N             &mt RS(M) M     &comma_comma        &dot_dot            &kp FSLH            &kp BSPC
+                                                        &mkp LCLK             &mkp RCLK           &lt 1 SPACE        &kp LEFT_GUI         &mmv MOVE_RIGHT              &lt 2 SPACE             &lt 2 SPACE     &kp RALT
                                                                                                                                          &mkp RCLK
             >;
             label = "MOUSE";
