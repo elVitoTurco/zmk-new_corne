@@ -51,17 +51,17 @@ layers:
   - $$mdi:mouse-right-click-outline$$
   mouse:
   - $$mdi:keyboard-esc$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:mouse-left-click-outline$$
+  - {t: Q, h: Sft+ Q}
+  - {t: W, h: Sft+ W}
+  - {t: E, h: Sft+ E}
+  - {t: R, h: Sft+ R}
+  - {t: T, h: Sft+ T}
   - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
-  - $$mdi:mouse-right-click-outline$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - VOL UP
-  - '&mwh SCROLL_UP'
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '&mwh SCROLL_DOWN'
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: Y, h: Sft+ Y}
+  - {t: U, h: Sft+ U}
+  - {t: I, h: Sft+ I}
+  - {t: O, h: Sft+ O}
+  - {t: P, h: Sft+ P}
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:keyboard-tab$$
   - {t: A, h: Sft+ A}
