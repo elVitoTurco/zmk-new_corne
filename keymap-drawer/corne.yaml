@@ -51,7 +51,7 @@ layers:
   - $$mdi:mouse-right-click-outline$$
   mouse:
   - $$mdi:keyboard-esc$$
-  - {t: Q, h: Sft+ Q}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: W, h: Sft+ W}
   - {t: E, h: Sft+ E}
   - {t: R, h: Sft+ R}
