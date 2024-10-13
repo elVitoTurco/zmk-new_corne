@@ -136,6 +136,11 @@
             sensor-bindings = <&scroll_encoder>;
         };
 
+
+
+
+
+
         mouse_layer {
             display-name = "MOUSE";
 
@@ -151,7 +156,7 @@
             */
 
                 bindings = <
-                &kp ESC             &mt RS(Q) Q         &mt RS(W) W           &mt RS(E) E        &mt RS(R) R        &mt RS(T) T          &mmv MOVE_UP                 &mt RS(Y) Y             &mt RS(U) U     &mt RS(I) I         &mt RS(O) O         &mt RS(P) P         &kp BSPC
+                &kp ESC             &none               &mkp LCLK             &mmv MOVE_UP       &mkp RCLK          &none                &kp K_VOL_UP            &mwh SCROLL_UP          &none                 &mwh SCROLL_DOWN         &none               &none            &kp BSPC
                 &kp TAB             &mt RS(A) A         &mt RS(S) S           &mt RS(D) D        &mt RS(F) F        &mt RS(G) G          &mmv MOVE_DOWN               &mt RS(H) H             &mt RS(J) J     &mt RS(K) K         &mt RS(L) L         &kp SEMI            &kp RETURN
                 &kp LSHIFT          &mt RS(Z) Z         &mt RS(X) X           &mt RS(C) C        &mt RS(V) V        &mt RS(B) B          &mmv MOVE_LEFT               &mt RS(N) N             &mt RS(M) M     &comma_comma        &dot_dot            &kp FSLH            &kp BSPC
                                                         &mkp LCLK             &sk LEFT_CONTROL   &lt 1 SPACE        &kp LEFT_GUI         &mmv MOVE_RIGHT              &lt 2 SPACE             &lt 2 SPACE     &kp RALT
@@ -160,6 +165,11 @@
             label = "MOUSE";
             sensor-bindings = <&scroll_encoder>;
         };
+
+
+
+
+
 
         raise_layer {
             display-name = "SYMBOL";
@@ -181,6 +191,10 @@
             label = "SYMBOL";
             sensor-bindings = <&scroll_encoder>;
         };
+
+
+
+
 
         layer_3 {
             display-name = "Fn";
