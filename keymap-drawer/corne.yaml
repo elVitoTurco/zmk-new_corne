@@ -1,0 +1,197 @@
+layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x6_3}
+layers:
+  base:
+  - $$mdi:keyboard-esc$$
+  - {t: Q, h: Sft+ Q}
+  - {t: W, h: Sft+ W}
+  - {t: E, h: Sft+ E}
+  - {t: R, h: Sft+ R}
+  - {t: T, h: Sft+ T}
+  - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
+  - {t: Y, h: Sft+ Y}
+  - {t: U, h: Sft+ U}
+  - {t: I, h: Sft+ I}
+  - {t: O, h: Sft+ O}
+  - {t: P, h: Sft+ P}
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - $$mdi:keyboard-tab$$
+  - {t: A, h: Sft+ A}
+  - {t: S, h: Sft+ S}
+  - {t: D, h: Sft+ D}
+  - {t: F, h: Sft+ F}
+  - {t: G, h: Sft+ G}
+  - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
+  - {t: H, h: Sft+ H}
+  - {t: J, h: Sft+ J}
+  - {t: K, h: Sft+ K}
+  - {t: L, h: Sft+ L}
+  - {t: ;, s: ':'}
+  - RETURN
+  - $$mdi:apple-keyboard-shift$$
+  - {t: Z, h: Sft+ Z}
+  - {t: X, h: Sft+ X}
+  - {t: C, h: Sft+ C}
+  - {t: V, h: Sft+ V}
+  - {t: B, h: Sft+ B}
+  - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
+  - {t: N, h: Sft+ N}
+  - {t: M, h: Sft+ M}
+  - '&comma_comma'
+  - '&dot_dot'
+  - {t: /, s: '?'}
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - $$mdi:mouse-right-click-outline$$
+  - {t: '$$mdi:apple-keyboard-control$$', h: '$$mdi:gesture-tap-hold$$'}
+  - {t: '$$mdi:keyboard-space$$', h: numbers}
+  - $$mdi:apple-keyboard-command$$
+  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
+  - {t: '$$mdi:keyboard-space$$', h: mouse}
+  - {t: '$$mdi:keyboard-space$$', h: navigation}
+  - {t: '$$mdi:keyboard-space$$', h: mouse}
+  - $$mdi:mouse-left-click-outline$$
+  mouse:
+  - $$mdi:keyboard-esc$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:mouse-left-click-outline$$
+  - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
+  - $$mdi:mouse-right-click-outline$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
+  - VOL UP
+  - $$mdi:pan-up$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:pan-down$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - $$mdi:keyboard-tab$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
+  - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
+  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
+  - VOL DN
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - RETURN
+  - $$mdi:apple-keyboard-shift$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - Alt+ $$mdi:arrow-left-bold$$
+  - Alt+ $$mdi:arrow-right-bold$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - Ctl+ PgUp
+  - Ctl+ PgDn
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - $$mdi:mouse-left-click-outline$$
+  - $$mdi:mouse-right-click-outline$$
+  - $$mdi:mouse-left-click-outline$$
+  - $$mdi:mouse-scroll-wheel$$
+  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
+  - {t: '$$mdi:mouse-right-click-outline$$', type: held}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: held alternate}
+  - $$mdi:mouse-right-click-outline$$
+  navigation:
+  - $$mdi:keyboard-esc$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - PgDn
+  - $$mdi:arrow-up-bold$$
+  - PgUp
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
+  - VOL UP
+  - $$mdi:pan-up$$
+  - $$mdi:pan-down$$
+  - $$mdi:pan-down$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - $$mdi:keyboard-tab$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:arrow-left-bold$$
+  - $$mdi:arrow-down-bold$$
+  - $$mdi:arrow-right-bold$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
+  - VOL DN kp LEFT SHIFT
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-option$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - RETURN
+  - $$mdi:apple-keyboard-shift$$
+  - Z
+  - X
+  - C
+  - V
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - Ctl+ PgUp
+  - Ctl+ PgDn
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - $$mdi:mouse-left-click-outline$$
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-command$$
+  - $$mdi:mouse-scroll-wheel$$
+  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
+  - $$mdi:mouse-right-click-outline$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: held}
+  - $$mdi:mouse-right-click-outline$$
+  numbers:
+  - $$mdi:keyboard-esc$$
+  - {t: '1', h: '!'}
+  - {t: '2', h: '@'}
+  - {t: '3', h: '#'}
+  - {t: '4', h: $}
+  - {t: '5', h: '%'}
+  - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
+  - {t: '6', h: ^}
+  - {t: '7', h: '&'}
+  - {t: '8', h: '*'}
+  - {t: '9', h: (}
+  - {t: '0', h: )}
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - $$mdi:keyboard-tab$$
+  - {t: '''', s: '"'}
+  - AGr+ W
+  - {t: 'Sft+ [', s: 'Sft+ {'}
+  - {t: ;, h: '$$mdi:apple-keyboard-shift$$', s: ':'}
+  - KP SLASH
+  - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
+  - $$mdi:apple-keyboard-caps$$
+  - '&open_symbol'
+  - '&close_symbol'
+  - {t: _, h: '-'}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - RETURN
+  - F1
+  - F2
+  - F3
+  - Alt+ F4
+  - Ctl+ F5
+  - F6
+  - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
+  - F7
+  - F8
+  - F9
+  - F10
+  - F11
+  - F12
+  - $$mdi:mouse-left-click-outline$$
+  - $$mdi:mouse-right-click-outline$$
+  - {t: '$$mdi:mouse-left-click-outline$$', type: held}
+  - $$mdi:mouse-scroll-wheel$$
+  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
+  - $$mdi:mouse-right-click-outline$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:mouse-right-click-outline$$
