@@ -165,11 +165,11 @@
             */
 
                 bindings = <
-                &kp ESC             &none               &mkp LCLK             &mmv MOVE_UP        &mkp RCLK          &mt RS(T) T          &mmv MOVE_UP                 &mt RS(Y) Y             &mt RS(U) U     &mt RS(I) I         &mt RS(O) O         &mt RS(P) P         &kp BSPC
-                &kp TAB             &none               &mmv MOVE_LEFT        &mmv MOVE_DOWN      &mmv MOVE_RIGHT    &mt RS(G) G          &mmv MOVE_DOWN               &mt RS(H) H             &mt RS(J) J     &mt RS(K) K         &mt RS(L) L         &kp SEMI            &kp RETURN
-                &kp LSHIFT          &none               &none                 &kp LA(LEFT)        &kp LA(RIGHT)      &mt RS(B) B          &mmv MOVE_LEFT               &mt RS(N) N             &mt RS(M) M     &comma_comma        &dot_dot            &kp FSLH            &kp BSPC
-                                                        &mkp LCLK             &mkp RCLK           &mkp LCLK          &kp LEFT_GUI         &mmv MOVE_RIGHT              &lt 2 SPACE             &lt 2 SPACE     &kp RALT
-                                                                                                                                         &mkp RCLK
+                &kp ESC             &none               &mkp LCLK             &mmv MOVE_UP        &mkp RCLK          &none                &mmv MOVE_UP                 &mt RS(Y) Y             &mt RS(U) U     &mt RS(I) I         &mt RS(O) O         &mt RS(P) P         &kp BSPC
+                &kp TAB             &none               &mmv MOVE_LEFT        &mmv MOVE_DOWN      &mmv MOVE_RIGHT    &none                &mmv MOVE_DOWN               &mt RS(H) H             &mt RS(J) J     &mt RS(K) K         &mt RS(L) L         &kp SEMI            &kp RETURN
+                &kp LSHIFT          &none               &none                 &kp LA(LEFT)        &kp LA(RIGHT)      &none                &mmv MOVE_LEFT               &mt RS(N) N             &mt RS(M) M     &comma_comma        &dot_dot            &kp FSLH            &kp BSPC
+                                                        &mkp LCLK             &mkp RCLK           &mkp LCLK          &mkp MCLK            &mmv MOVE_RIGHT              &lt 2 SPACE             &lt 2 SPACE     &kp RALT
+                                                                                                                                          &mkp RCLK
             >;
             label = "MOUSE";
             sensor-bindings = <&scroll_encoder>;
