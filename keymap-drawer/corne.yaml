@@ -162,11 +162,11 @@ layers:
   - {t: '0', h: )}
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:keyboard-tab$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:arrow-left-bold$$
-  - $$mdi:arrow-down-bold$$
-  - $$mdi:arrow-right-bold$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '''', s: '"'}
+  - AGr+ W
+  - {t: 'Sft+ [', s: 'Sft+ {'}
+  - {t: ;, h: '$$mdi:apple-keyboard-shift$$', s: ':'}
+  - KP SLASH
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - VOL DN
   - {t: '$$mdi:minus-circle-outline$$', type: none}
