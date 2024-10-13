@@ -13,20 +13,6 @@
 #define U_MS_L &mmv MOVE_LEFT
 #define U_MS_R &mmv MOVE_RIGHT
 
-
-
-      &mwh {
-            acceleration-exponent=<1>;
-        };
-        &mt {
-            tapping-term-ms = <300>;
-            flavor = "tap-preferred";
-        };
-        &mmv {
-	        time-to-max-speed-ms = <300>;
-        };
-
-
 / {
     behaviors {
         td0: td0 {
@@ -34,6 +20,12 @@
             label = "TD0";
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
+        };
+
+        mmv {
+            acceleration-exponent = <1>;      // 1
+            time-to-max-speed-ms = <900>;    // 40
+            delay-ms = <0>;                   // 0
         };
 
         msc {
