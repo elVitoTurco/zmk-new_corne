@@ -24,7 +24,7 @@
 
 
 &mmv {
-	time-to-max-speed-ms = <00>;
+	time-to-max-speed-ms = <500>;
 };
 
 &mt {
