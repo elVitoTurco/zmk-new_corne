@@ -19,7 +19,7 @@
 #define MOUSE 1
 #define NAVIGATION 2
 #define NUMBERS 3
-#define SHORTCUT 4
+#define INTELLIJ 4
 
 
 
@@ -245,34 +245,6 @@
             label = "NUMBER";
             sensor-bindings = <&scroll_encoder>;
         };
-
-
-
-        base_layer {
-            display-name = "SHORTCUT";
-
-            /* BASE
-               Contains autoshift and querty characters
-               ╭─────────────────────────────────────────╮    ╭──────╮╭─────────────────────────────────────────╮
-               | ESC  |  Q   |  W   |  E   |   R  |   T  |    |  ↑   ||  Y   |  U   |  I   |  O   |  P   | BKSP |  
-               | TAB  |  A   |  S   |  D   |   F  |   G  |    |  ↓   ||  H   |  J   |  K   |  L   |  ;   |  '   | 
-               | SHIFT|  Z   |  X   |  C   |   V  |   B  |    |  ←   ||  N   |  M   |  ,   |  .   |  /   | ESC  |
-               ╰────────────────────╮STCTRL|  SPC |  GUI |    |  →   || ENT  |  RS  | ALT  ╭────────────────────╯ 
-                                    ╰────────────────────╯    | ENT  |╰────────────────────╯
-                                                              ╰──────╯                       
-            */
-                bindings = <
-                &kp ESC             &mt RS(Q) Q         &mt RS(W) W           &mt RS(E) E        &mt RS(R) R        &mt RS(T) T          &mmv MOVE_UP                 &mt RS(Y) Y             &mt RS(U) U     &mt RS(I) I         &mt RS(O) O         &mt RS(P) P         &kp BSPC
-                &kp TAB             &mt RS(A) A         &mt RS(S) S           &mt RS(D) D        &mt RS(F) F        &mt RS(G) G          &mmv MOVE_DOWN               &mt RS(H) H             &mt RS(J) J     &mt RS(K) K         &mt RS(L) L         &kp SEMI            &kp RETURN
-                &kp LSHIFT          &mt RS(Z) Z         &mt RS(X) X           &mt RS(C) C        &mt RS(V) V        &mt RS(B) B          &mmv MOVE_LEFT               &mt RS(N) N             &mt RS(M) M     &comma_comma        &dot_dot            &kp FSLH            &kp BSPC
-                                                        &mkp RCLK             &sk LEFT_CONTROL   &lt NUMBERS SPACE  &kp LEFT_GUI         &mmv MOVE_RIGHT              &lt MOUSE SPACE         &lt NAVIGATION SPACE     &lt MOUSE SPACE
-                                                                                                                                         &mkp LCLK
-            >;
-
-            label = "SHORTCUT";
-            sensor-bindings = <&scroll_encoder>;
-        };
-
 
 
 
