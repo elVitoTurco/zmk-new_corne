@@ -91,13 +91,12 @@ layers:
   - {t: '$$mdi:backspace$$', type: backspace}
   - ''
   - $$mdi:apple-keyboard-command$$
-  - '&mkp'
   - $$mdi:apple-keyboard-command$$
   - $$mdi:mouse-left-click-outline$$
   - $$mdi:mouse-scroll-wheel$$
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
-  - {t: '$$mdi:mouse-right-click-outline$$', type: held}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:mouse-right-click-outline$$
+  - {t: '$$mdi:minus-circle-outline$$', type: held}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:mouse-right-click-outline$$
   navigation:
