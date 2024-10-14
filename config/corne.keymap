@@ -19,13 +19,12 @@
 #define MOUSE 1
 #define NAVIGATION 2
 #define NUMBERS 3
-#define INTELLIJ 4
-
+#define SHORTCUT 4
 
 
 
 &mmv {
-	time-to-max-speed-ms = <300>;
+	time-to-max-speed-ms = <00>;
 };
 
 &mt {
@@ -208,9 +207,9 @@
             */
 
                 bindings = <
-                &kp ESC             &none               &kp PAGE_DOWN         &kp UP              &kp PAGE_UP        &none                &mmv MOVE_UP                 &kp K_VOL_UP            &msc SCRL_UP         &msc SCRL_DOWN            &msc SCRL_DOWN           &none            &kp BSPC
-                &kp TAB             &none               &kp LEFT              &kp DOWN            &kp RIGHT          &none                &mmv MOVE_DOWN               &kp K_VOL_DN            &kp LEFT_SHIFT        &kp LEFT_CONTROL          &kp LALT                 &none            &kp RETURN
-                &kp LSHIFT          &kp Z               &kp X                 &kp C               &kp V              &none                &mmv MOVE_LEFT               &none                   &kp LC(PAGE_UP)      &kp LC(PAGE_DOWN)         &none                    &none            &kp BSPC
+                &kp ESC             &none               &kp PAGE_DOWN         &kp UP              &kp PAGE_UP        &none                &mmv MOVE_UP                 &kp K_VOL_UP            &msc SCRL_UP         &msc SCRL_DOWN            &msc SCRL_DOWN           &kp BSPC         &kp BSPC
+                &kp TAB             &none               &kp LEFT              &kp DOWN            &kp RIGHT          &none                &mmv MOVE_DOWN               &kp K_VOL_DN            &kp LEFT_SHIFT        &kp LEFT_CONTROL          &kp LALT                &kp RETURN       &kp RETURN
+                &kp LSHIFT          &kp Z               &kp X                 &kp C               &kp V              &none                &mmv MOVE_LEFT               &none                   &kp LC(PAGE_UP)      &kp LC(PAGE_DOWN)         &none                    &kp BSPC         &kp BSPC
                                                         &mkp LCLK             &mkp RCLK           &mkp LCLK          &mkp MCLK            &mmv MOVE_RIGHT              &mkp RCLK               &none                &none
                                                                                                                                           &mkp RCLK
             >;
@@ -237,15 +236,43 @@
             */
 
                 bindings = <
-                &kp ESC             &mt EXCLAMATION NUMBER_1  &mt AT_SIGN NUMBER_2  &mt HASH NUMBER_3      &mt DOLLAR NUMBER_4      &mt PERCENT NUMBER_5   &mmv MOVE_UP                 &mt CARET NUMBER_6      &mt AMPERSAND NUMBER_7   &mt ASTERISK NUMBER_8     &mt LEFT_PARENTHESIS NUMBER_9    &mt RIGHT_PARENTHESIS NUMBER_0             &kp BSPC
-                &kp TAB             &kp SINGLE_QUOTE          &kp RA(W)             &kp LS(LEFT_BRACKET)   &mt LEFT_SHIFT SEMICOLON &kp KP_SLASH           &mmv MOVE_DOWN               &kp CAPS                &open_symbol             &close_symbol             &mt MINUS UNDER                  &none                                      &kp RETURN
-                &kp F1              &kp F2                    &kp F3                &kp LA(F4)             &kp LC(F5)               &kp F6                 &mmv MOVE_LEFT               &kp F7                  &kp F8                   &kp F9                    &kp F10                          &kp F11                                    &kp F12
-                                                              &mkp LCLK             &mkp RCLK              &mkp LCLK                &mkp MCLK              &mmv MOVE_RIGHT              &mkp RCLK               &none                    &none
-                                                                                                                                                           &mkp RCLK
+                &kp ESC             &mt EXCLAMATION NUMBER_1                &mt AT_SIGN NUMBER_2  &mt HASH NUMBER_3      &mt DOLLAR NUMBER_4      &mt PERCENT NUMBER_5                  &mmv MOVE_UP                 &mt CARET NUMBER_6      &mt AMPERSAND NUMBER_7   &mt ASTERISK NUMBER_8     &mt LEFT_PARENTHESIS NUMBER_9    &mt RIGHT_PARENTHESIS NUMBER_0             &kp BSPC
+                &kp TAB             &mt SINGLE_QUOTE DOUBLE_QUOTES          &kp RA(W)             &kp LS(LEFT_BRACKET)   &mt LEFT_SHIFT SEMICOLON &mt KP_SLASH NON_US_BACKSLASH         &mmv MOVE_DOWN               &kp CAPS                &open_symbol             &close_symbol             &mt MINUS UNDER                  &none                                      &kp RETURN
+                &kp F1              &kp F2                                  &kp F3                &kp LA(F4)             &kp LC(F5)               &kp F6                                &mmv MOVE_LEFT               &kp F7                  &kp F8                   &kp F9                    &kp F10                          &kp F11                                    &kp F12
+                                                                            &mkp LCLK             &mkp RCLK              &mkp LCLK                &mkp MCLK                             &mmv MOVE_RIGHT              &kp BACKSLASH           &kp PIPE            &kp SLASH
+                                                                                                                                                                          &mkp RCLK
             >;
             label = "NUMBER";
             sensor-bindings = <&scroll_encoder>;
         };
+
+
+
+        shortcut_layer {
+            display-name = "SHORTCUT";
+
+           /* BASE
+               Contains autoshift and querty characters
+               ╭─────────────────────────────────────────╮    ╭──────╮╭─────────────────────────────────────────╮
+               | TAB  |  Q   |  W   |  E   |   R  |   T  |    |  ↑   ||  Y   |  U   |  I   |  O   |  P   | BKSP |  
+               | SHIFT|  A   |  S   |  D   |   F  |   G  |    |  ↓   ||  H   |  J   |  K   |  L   |  ;   |  '   | 
+               | CTRL |  Z   |  X   |  C   |   V  |   B  |    |  ←   ||  N   |  M   |  ,   |  .   |  /   | ESC  |
+               ╰────────────────────╮  GUI | NUM  | SPC  |    |  →   || ENT  |  RS  | ALT  ╭────────────────────╯ 
+                                    ╰────────────────────╯    | ENT  |╰────────────────────╯
+                                                              ╰──────╯                                           
+            */
+
+                bindings = <
+                &kp ESC             &mt EXCLAMATION NUMBER_1                &mt AT_SIGN NUMBER_2  &mt HASH NUMBER_3      &mt DOLLAR NUMBER_4      &mt PERCENT NUMBER_5                  &mmv MOVE_UP                 &mt CARET NUMBER_6      &mt AMPERSAND NUMBER_7   &mt ASTERISK NUMBER_8     &mt LEFT_PARENTHESIS NUMBER_9    &mt RIGHT_PARENTHESIS NUMBER_0             &kp BSPC
+                &kp TAB             &mt SINGLE_QUOTE DOUBLE_QUOTES          &kp RA(W)             &kp LS(LEFT_BRACKET)   &mt LEFT_SHIFT SEMICOLON &mt KP_SLASH NON_US_BACKSLASH         &mmv MOVE_DOWN               &kp CAPS                &open_symbol             &close_symbol             &mt MINUS UNDER                  &none                                      &kp RETURN
+                &kp F1              &kp F2                                  &kp F3                &kp LA(F4)             &kp LC(F5)               &kp F6                                &mmv MOVE_LEFT               &kp F7                  &kp F8                   &kp F9                    &kp F10                          &kp F11                                    &kp F12
+                                                                            &mkp LCLK             &mkp RCLK              &mkp LCLK                &mkp MCLK                             &mmv MOVE_RIGHT              &kp BACKSLASH           &kp PIPE            &kp SLASH
+                                                                                                                                                                          &mkp RCLK
+            >;
+            label = "SHORTCUT";
+            sensor-bindings = <&scroll_encoder>;
+        };
+
 
 
     };
