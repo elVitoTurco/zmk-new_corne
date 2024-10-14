@@ -248,30 +248,35 @@
 
 
 
-        shortcut_layer {
+        base_layer {
             display-name = "SHORTCUT";
 
-           /* BASE
+            /* BASE
                Contains autoshift and querty characters
                ╭─────────────────────────────────────────╮    ╭──────╮╭─────────────────────────────────────────╮
-               | TAB  |  Q   |  W   |  E   |   R  |   T  |    |  ↑   ||  Y   |  U   |  I   |  O   |  P   | BKSP |  
-               | SHIFT|  A   |  S   |  D   |   F  |   G  |    |  ↓   ||  H   |  J   |  K   |  L   |  ;   |  '   | 
-               | CTRL |  Z   |  X   |  C   |   V  |   B  |    |  ←   ||  N   |  M   |  ,   |  .   |  /   | ESC  |
-               ╰────────────────────╮  GUI | NUM  | SPC  |    |  →   || ENT  |  RS  | ALT  ╭────────────────────╯ 
+               | ESC  |  Q   |  W   |  E   |   R  |   T  |    |  ↑   ||  Y   |  U   |  I   |  O   |  P   | BKSP |  
+               | TAB  |  A   |  S   |  D   |   F  |   G  |    |  ↓   ||  H   |  J   |  K   |  L   |  ;   |  '   | 
+               | SHIFT|  Z   |  X   |  C   |   V  |   B  |    |  ←   ||  N   |  M   |  ,   |  .   |  /   | ESC  |
+               ╰────────────────────╮STCTRL|  SPC |  GUI |    |  →   || ENT  |  RS  | ALT  ╭────────────────────╯ 
                                     ╰────────────────────╯    | ENT  |╰────────────────────╯
-                                                              ╰──────╯                                           
+                          
+                          
+            
+                          
+                                                              ╰──────╯                       
             */
-
                 bindings = <
-                &kp ESC             &mt EXCLAMATION NUMBER_1                &mt AT_SIGN NUMBER_2  &mt HASH NUMBER_3      &mt DOLLAR NUMBER_4      &mt PERCENT NUMBER_5                  &mmv MOVE_UP                 &mt CARET NUMBER_6      &mt AMPERSAND NUMBER_7   &mt ASTERISK NUMBER_8     &mt LEFT_PARENTHESIS NUMBER_9    &mt RIGHT_PARENTHESIS NUMBER_0             &kp BSPC
-                &kp TAB             &mt SINGLE_QUOTE DOUBLE_QUOTES          &kp RA(W)             &kp LS(LEFT_BRACKET)   &mt LEFT_SHIFT SEMICOLON &mt KP_SLASH NON_US_BACKSLASH         &mmv MOVE_DOWN               &kp CAPS                &open_symbol             &close_symbol             &mt MINUS UNDER                  &none                                      &kp RETURN
-                &kp F1              &kp F2                                  &kp F3                &kp LA(F4)             &kp LC(F5)               &kp F6                                &mmv MOVE_LEFT               &kp F7                  &kp F8                   &kp F9                    &kp F10                          &kp F11                                    &kp F12
-                                                                            &mkp LCLK             &mkp RCLK              &mkp LCLK                &mkp MCLK                             &mmv MOVE_RIGHT              &kp BACKSLASH           &kp PIPE            &kp SLASH
-                                                                                                                                                                          &mkp RCLK
+                &kp ESC             &mt RS(LC(RA(Q))) LC(RA(Q))         &mt RS(W) W           &mt RS(E) E        &mt RS(R) R        &mt RS(T) T          &mmv MOVE_UP                 &mt RS(Y) Y             &mt RS(U) U     &mt RS(I) I         &mt RS(O) O         &mt RS(P) P         &kp BSPC
+                &kp TAB             &mt RS(A) A                 &mt RS(S) S           &mt RS(D) D        &mt RS(F) F        &mt RS(G) G          &mmv MOVE_DOWN               &mt RS(H) H             &mt RS(J) J     &mt RS(K) K         &mt RS(L) L         &kp SEMI            &kp RETURN
+                &kp LSHIFT          &mt RS(Z) Z                 &mt RS(X) X           &mt RS(C) C        &mt RS(V) V        &mt RS(B) B          &mmv MOVE_LEFT               &mt RS(N) N             &mt RS(M) M     &comma_comma        &dot_dot            &kp FSLH            &kp BSPC
+                                                                &mkp RCLK             &sk LEFT_CONTROL   &lt NUMBERS SPACE  &kp LEFT_GUI         &mmv MOVE_RIGHT              &lt MOUSE SPACE         &lt NAVIGATION SPACE     &lt MOUSE SPACE
+                                                                                                                                         &mkp LCLK
             >;
+
             label = "SHORTCUT";
             sensor-bindings = <&scroll_encoder>;
         };
+
 
 
 
