@@ -209,9 +209,9 @@
 
                 bindings = <
                 &kp ESC             &none               &kp PAGE_DOWN         &kp UP              &kp PAGE_UP        &none                &mmv MOVE_UP                 &kp K_VOL_UP            &msc SCRL_UP         &msc SCRL_DOWN            &msc SCRL_DOWN           &none            &kp BSPC
-                &kp TAB             &none               &kp LEFT              &kp DOWN            &kp RIGHT          &none                &mmv MOVE_DOWN               &kp K_VOL_DN            kp LEFT_SHIFT        &kp LEFT_CONTROL          &kp LALT                 &none            &kp RETURN
+                &kp TAB             &none               &kp LEFT              &kp DOWN            &kp RIGHT          &none                &mmv MOVE_DOWN               &kp K_VOL_DN            &kp LEFT_SHIFT        &kp LEFT_CONTROL          &kp LALT                 &none            &kp RETURN
                 &kp LSHIFT          &kp Z               &kp X                 &kp C               &kp V              &none                &mmv MOVE_LEFT               &none                   &kp LC(PAGE_UP)      &kp LC(PAGE_DOWN)         &none                    &none            &kp BSPC
-                                                        &mkp LCLK             &kp LEFT_CONTROL    &kp LEFT_GUI       &mkp MCLK            &mmv MOVE_RIGHT              &mkp RCLK               &none                &none
+                                                        &mkp LCLK             &mkp RCLK           &mkp LCLK          &mkp MCLK            &mmv MOVE_RIGHT              &mkp RCLK               &none                &none
                                                                                                                                           &mkp RCLK
             >;
             label = "NAV";
