@@ -171,8 +171,7 @@ layers:
   - $$mdi:apple-keyboard-caps$$
   - '&open_symbol'
   - '&close_symbol'
-  - {t: _, h: '-'}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - '&mt MINUS UNDER RS(NON_US_BACKSLASH)'
   - RETURN
   - F1
   - F2
@@ -189,10 +188,10 @@ layers:
   - F12
   - $$mdi:mouse-left-click-outline$$
   - $$mdi:mouse-right-click-outline$$
-  - {t: '$$mdi:mouse-left-click-outline$$', type: held}
-  - $$mdi:mouse-scroll-wheel$$
+  - $$mdi:mouse-left-click-outline$$
+  - {t: '$$mdi:mouse-scroll-wheel$$', type: held}
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
-  - \
-  - '|'
-  - Sft+ \
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:mouse-right-click-outline$$
