@@ -207,10 +207,10 @@
             */
 
                 bindings = <
-                &kp ESC             &none               &kp PAGE_DOWN         &kp UP              &kp PAGE_UP        &none                &mmv MOVE_UP                 &kp K_VOL_UP            &msc SCRL_UP         &msc SCRL_DOWN            &msc SCRL_DOWN           &kp BSPC         &kp BSPC
-                &kp TAB             &none               &kp LEFT              &kp DOWN            &kp RIGHT          &none                &mmv MOVE_DOWN               &kp K_VOL_DN            &kp LEFT_SHIFT        &kp LEFT_CONTROL          &kp LALT                &kp RETURN       &kp RETURN
-                &kp LSHIFT          &kp Z               &kp X                 &kp C               &kp V              &none                &mmv MOVE_LEFT               &none                   &kp LC(PAGE_UP)      &kp LC(PAGE_DOWN)         &none                    &kp BSPC         &kp BSPC
-                                                        &mkp LCLK             &mkp RCLK           &mkp LCLK          &mkp MCLK            &mmv MOVE_RIGHT              &mkp RCLK               &none                &none
+                &kp ESC             &none               &kp PAGE_DOWN         &kp UP              &kp PAGE_UP        &none                &mmv MOVE_UP                 &none                   &msc SCRL_UP         &msc SCRL_DOWN            &msc SCRL_DOWN           &kp BSPC         &kp BSPC
+                &kp TAB             &kp HOME            &kp LEFT              &kp DOWN            &kp RIGHT          &kp END              &mmv MOVE_DOWN               &none                   &kp LEFT_SHIFT       &kp LEFT_CONTROL          &kp LALT                &kp RETURN       &kp RETURN
+                &kp LSHIFT          &kp Z               &kp X                 &kp C               &kp V              &none                &mmv MOVE_LEFT               &kp DEL                 &kp INSERT           &kp LC(PAGE_DOWN)         &none                    &kp BSPC         &kp BSPC
+                                                        &mkp LCLK             &sk LEFT_CONTROL    &kp LEFT_GUI       &mkp MCLK            &mmv MOVE_RIGHT              &mkp RCLK               &none                &none
                                                                                                                                           &mkp RCLK
             >;
             label = "NAV";
