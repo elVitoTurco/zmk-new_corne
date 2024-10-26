@@ -161,7 +161,7 @@ layers:
   - {t: '9', h: (}
   - {t: '0', h: )}
   - {t: '$$mdi:backspace$$', type: backspace}
-  - $$mdi:keyboard-tab$$
+  - Alt+ Q
   - {t: '''', s: '"'}
   - AGr+ W
   - {t: 'Sft+ [', s: 'Sft+ {'}
