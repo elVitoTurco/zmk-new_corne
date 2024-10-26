@@ -161,7 +161,7 @@ layers:
   - {t: '9', h: (}
   - {t: '0', h: )}
   - {t: '$$mdi:backspace$$', type: backspace}
-  - Alt+ Q
+  - $$mdi:keyboard-tab$$
   - {t: '''', s: '"'}
   - AGr+ W
   - {t: 'Sft+ [', s: 'Sft+ {'}
@@ -194,5 +194,5 @@ layers:
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '''', s: '"'}
-  - <
+  - Alt+ Q
   - $$mdi:mouse-right-click-outline$$
