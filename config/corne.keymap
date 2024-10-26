@@ -103,31 +103,6 @@
     };
 
 
-            /* To ADD
-                Intelij shortcuts
-                    Maven       M
-                        Clean   C
-                        Install I
-                    Database    D
-                    Editor      E
-                    Debug       D
-                        Run
-                        Terminal
-                        Breakpoints
-                    Terminal    T
-                    Project 
-
-
-                    easy home and end
-
-                    put on the first thumb key a layer of intellij stuff
-                    add gui to navigation layer
-
-            */
-
-
-
-
     keymap {
         compatible = "zmk,keymap";
 
