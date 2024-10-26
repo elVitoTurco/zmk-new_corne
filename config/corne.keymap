@@ -148,7 +148,7 @@
                 &kp ESC             &mt RS(Q) Q         &mt RS(W) W           &mt RS(E) E        &mt RS(R) R        &mt RS(T) T          &mmv K_VOL_UP                 &mt RS(Y) Y             &mt RS(U) U     &mt RS(I) I         &mt RS(O) O         &mt RS(P) P         &kp BSPC
                 &kp TAB             &mt RS(A) A         &mt RS(S) S           &mt RS(D) D        &mt RS(F) F        &mt RS(G) G          &mmv K_VOL_DN                 &mt RS(H) H             &mt RS(J) J     &mt RS(K) K         &mt RS(L) L         &kp SEMI            &kp RETURN
                 &kp LSHIFT          &mt RS(Z) Z         &mt RS(X) X           &mt RS(C) C        &mt RS(V) V        &mt RS(B) B          &none                         &mt RS(N) N             &mt RS(M) M     &comma_comma        &dot_dot            &kp FSLH            &kp BSPC
-                                                        &mkp RCLK             &sk LEFT_CONTROL   &lt NUMBERS SPACE  &kp LEFT_GUI         &&none                        &kp LALT                &lt NAVIGATION SPACE     &lt MOUSE SPACE
+                                                        &mkp RCLK             &sk LEFT_CONTROL   &lt NUMBERS SPACE  &kp LEFT_GUI         &none                        &kp LALT                &lt NAVIGATION SPACE     &lt MOUSE SPACE
                                                                                                                                          &mkp LCLK
             >;
 
