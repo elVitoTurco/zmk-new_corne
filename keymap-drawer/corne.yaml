@@ -7,7 +7,7 @@ layers:
   - {t: E, h: Sft+ E}
   - {t: R, h: Sft+ R}
   - {t: T, h: Sft+ T}
-  - $$mdi:volume-high$$
+  - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
   - {t: Y, h: Sft+ Y}
   - {t: U, h: Sft+ U}
   - {t: I, h: Sft+ I}
@@ -20,7 +20,7 @@ layers:
   - {t: D, h: Sft+ D}
   - {t: F, h: Sft+ F}
   - {t: G, h: Sft+ G}
-  - $$mdi:volume-low$$
+  - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - {t: H, h: Sft+ H}
   - {t: J, h: Sft+ J}
   - {t: K, h: Sft+ K}
@@ -33,18 +33,18 @@ layers:
   - {t: C, h: Sft+ C}
   - {t: V, h: Sft+ V}
   - {t: B, h: Sft+ B}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - {t: N, h: Sft+ N}
   - {t: M, h: Sft+ M}
   - '&comma_comma'
   - '&dot_dot'
   - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:backspace$$', type: backspace}
-  - $$mdi:mouse-right-click-outline$$
+  - '&mkp C_MUTE'
   - {t: '$$mdi:apple-keyboard-control$$', h: '$$mdi:gesture-tap-hold$$'}
   - {t: '$$mdi:keyboard-space$$', h: numbers}
   - $$mdi:apple-keyboard-command$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
   - $$mdi:apple-keyboard-option$$
   - {t: '$$mdi:keyboard-space$$', h: navigation}
   - {t: APP, h: mouse}
