@@ -88,6 +88,9 @@
 
     };
 
+    // add control T
+    // add control 1
+    // add alt enter
 
     scroll_encoder: scroll_encoder {
         compatible = "zmk,behavior-sensor-rotate";
