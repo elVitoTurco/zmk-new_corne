@@ -143,10 +143,10 @@
            /* MOUSE
                Move mouse and navigation shortcuts
                ╭─────────────────────────────────────────╮    ╭──────╮╭─────────────────────────────────────────╮
-               | TAB  |      | LCLK |  MU  | RCLK |      |    |  ↑   ||VOL_UP|SCRLUP|  I   |SCRLDN|  P   | BKSP |  
-               | SHIFT|      |  ML  |  MD  |  ML  |      |    |  ↓   ||VOL_DN|      |  K   |  L   |  ;   |  '   | 
-               | CTRL |      |      | LA(L)| LA(R)|      |    |  ←   || MUTE |  M   |  ,   |  .   |  /   | ESC  |
-               ╰────────────────────╮  GUI | NUM  |      |    |  →   ||RCLICK|  RS  | ALT  ╭────────────────────╯ 
+               | TAB  |      | LCLK |  MU  | RCLK |      |    |  ↑   ||VOL_UP|SCRLUP|      |SCRLDN|      | BKSP |  
+               | SHIFT|      |  ML  |  MD  |  ML  |      |    |  ↓   ||VOL_DN|      |      |      |      |  '   | 
+               | CTRL |      |      | LA(L)| LA(R)|      |    |  ←   || MUTE | LCPU | LCPD |      |      | ESC  |
+               ╰────────────────────╮  GUI | NUM  |      |    |  →   ||RCLICK|      |      ╭────────────────────╯ 
                                     ╰────────────────────╯    | ENT  |╰────────────────────╯
                                                               ╰──────╯                                           
             */
