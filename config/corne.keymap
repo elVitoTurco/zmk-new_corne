@@ -92,13 +92,14 @@
     // add control 1
     // add alt enter
     // outer column potentaliiy usable
+    // add that left click buttonw
     
 
 
     scroll_encoder: scroll_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
-        bindings = < &kp K_VOL_UP>, <&kp K_VOL_DN>;
+        bindings = < &kp C_VOL_UP>, <&kp C_VOL_DN>;
         tap-ms = <60>;
     };
 
@@ -123,7 +124,7 @@
                 &kp ESC             &mt RS(Q) Q         &mt RS(W) W           &mt RS(E) E        &mt RS(R) R        &mt RS(T) T          &kp C_VOL_UP                 &mt RS(Y) Y             &mt RS(U) U     &mt RS(I) I         &mt RS(O) O         &mt RS(P) P         &kp BSPC
                 &kp TAB             &mt RS(A) A         &mt RS(S) S           &mt RS(D) D        &mt RS(F) F        &mt RS(G) G          &kp C_VOL_DN                 &mt RS(H) H             &mt RS(J) J     &mt RS(K) K         &mt RS(L) L         &mt RS(SEMI) SEMI   &kp RETURN
                 &kp LSHIFT          &mt RS(Z) Z         &mt RS(X) X           &mt RS(C) C        &mt RS(V) V        &mt RS(B) B          &none                        &mt RS(N) N             &mt RS(M) M     &comma_comma        &dot_dot            &kp BSPC            &kp BSPC
-                                                        &mkp RCLK             &sk LEFT_CONTROL   &lt NUMBERS SPACE  &kp LEFT_GUI         &none                        &kp LALT                &lt NAVIGATION SPACE                &lt MOUSE SPACE
+                                                        &mkp RCLK             &sk LEFT_CONTROL   &lt NUMBERS SPACE  &kp LEFT_GUI         &none                        &kp LALT                &lt NAVIGATION SPACE                &lt MOUSE K_APP
                                                                                                                                          &kp C_MUTE 
             >;
 
@@ -142,18 +143,18 @@
            /* MOUSE
                Move mouse and navigation shortcuts
                ╭─────────────────────────────────────────╮    ╭──────╮╭─────────────────────────────────────────╮
-               | TAB  |      | LCLK |  MU  | RCLK |   T  |    |  ↑   ||  Y   |  U   |  I   |  O   |  P   | BKSP |  
-               | SHIFT|      |  ML  |  MD  |  ML  |   G  |    |  ↓   ||  H   |  J   |  K   |  L   |  ;   |  '   | 
-               | CTRL |      |      | LA(L)| LA(R)|   B  |    |  ←   ||  N   |  M   |  ,   |  .   |  /   | ESC  |
-               ╰────────────────────╮  GUI | NUM  | SPC  |    |  →   || ENT  |  RS  | ALT  ╭────────────────────╯ 
+               | TAB  |      | LCLK |  MU  | RCLK |      |    |  ↑   ||VOL_UP|SCRLUP|  I   |SCRLDN|  P   | BKSP |  
+               | SHIFT|      |  ML  |  MD  |  ML  |      |    |  ↓   ||VOL_DN|      |  K   |  L   |  ;   |  '   | 
+               | CTRL |      |      | LA(L)| LA(R)|      |    |  ←   || MUTE |  M   |  ,   |  .   |  /   | ESC  |
+               ╰────────────────────╮  GUI | NUM  |      |    |  →   ||RCLICK|  RS  | ALT  ╭────────────────────╯ 
                                     ╰────────────────────╯    | ENT  |╰────────────────────╯
                                                               ╰──────╯                                           
             */
 
                 bindings = <
-                &kp ESC             &none               &mkp LCLK             &mmv MOVE_UP        &mkp RCLK          &none                &mmv MOVE_UP                 &kp K_VOL_UP            &msc SCRL_UP         &none                     &msc SCRL_DOWN           &none            &kp BSPC
-                &kp TAB             &none               &mmv MOVE_LEFT        &mmv MOVE_DOWN      &mmv MOVE_RIGHT    &none                &mmv MOVE_DOWN               &kp K_VOL_DN            &none                &none                     &none                    &none            &kp RETURN
-                &kp LSHIFT          &none               &none                 &kp LA(LEFT)        &kp LA(RIGHT)      &none                &mmv MOVE_LEFT               &none                   &kp LC(PAGE_UP)      &kp LC(PAGE_DOWN)         &none                    &none            &kp BSPC
+                &kp ESC             &none               &mkp LCLK             &mmv MOVE_UP        &mkp RCLK          &none                &mmv MOVE_UP                 &kp C_VOL_UP            &msc SCRL_UP         &none                     &msc SCRL_DOWN           &none            &kp BSPC
+                &kp TAB             &none               &mmv MOVE_LEFT        &mmv MOVE_DOWN      &mmv MOVE_RIGHT    &none                &mmv MOVE_DOWN               &kp C_VOL_DN            &none                &none                     &none                    &none            &kp RETURN
+                &kp LSHIFT          &none               &none                 &kp LA(LEFT)        &kp LA(RIGHT)      &none                &mmv MOVE_LEFT               &kp C_MUTE              &kp LC(PAGE_UP)      &kp LC(PAGE_DOWN)         &none                    &none            &kp BSPC
                                                         &kp LEFT_GUI          &kp LEFT_GUI        &mkp LCLK          &mkp MCLK            &mmv MOVE_RIGHT              &mkp RCLK               &none                &none
                                                                                                                                           &mkp RCLK
             >;
