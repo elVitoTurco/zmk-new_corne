@@ -91,6 +91,9 @@
     // add control T
     // add control 1
     // add alt enter
+    // outer column potentaliiy usable
+    
+
 
     scroll_encoder: scroll_encoder {
         compatible = "zmk,behavior-sensor-rotate";
@@ -109,19 +112,19 @@
             /* BASE
                Contains autoshift and querty characters
                ╭─────────────────────────────────────────╮    ╭──────╮╭─────────────────────────────────────────╮
-               | ESC  |  Q   |  W   |  E   |   R  |   T  |    |  ↑   ||  Y   |  U   |  I   |  O   |  P   | BKSP |  
-               | TAB  |  A   |  S   |  D   |   F  |   G  |    |  ↓   ||  H   |  J   |  K   |  L   |  ;   |  '   | 
-               | SHIFT|  Z   |  X   |  C   |   V  |   B  |    |  ←   ||  N   |  M   |  ,   |  .   |  /   | ESC  |
+               | ESC  |  Q   |  W   |  E   |   R  |   T  |    |  ↑   ||  Y   |  U   |  I   |  O   |  P   |      |  
+               | TAB  |  A   |  S   |  D   |   F  |   G  |    |  ↓   ||  H   |  J   |  K   |  L   |  Ç   |      | 
+               | SHIFT|  Z   |  X   |  C   |   V  |   B  |    |  ←   ||  N   |  M   |  ,   |  .   | BKSP |      |
                ╰────────────────────╮STCTRL|  SPC |  GUI |    |  →   || ENT  |  RS  | ALT  ╭────────────────────╯ 
                                     ╰────────────────────╯    | ENT  |╰────────────────────╯
                                                               ╰──────╯                       
             */
                 bindings = <
-                &kp ESC             &mt RS(Q) Q         &mt RS(W) W           &mt RS(E) E        &mt RS(R) R        &mt RS(T) T          &kp K_VOL_UP                 &mt RS(Y) Y             &mt RS(U) U     &mt RS(I) I         &mt RS(O) O         &mt RS(P) P         &kp BSPC
-                &kp TAB             &mt RS(A) A         &mt RS(S) S           &mt RS(D) D        &mt RS(F) F        &mt RS(G) G          &kp K_VOL_DN                 &mt RS(H) H             &mt RS(J) J     &mt RS(K) K         &mt RS(L) L         &kp SEMI            &kp RETURN
-                &kp LSHIFT          &mt RS(Z) Z         &mt RS(X) X           &mt RS(C) C        &mt RS(V) V        &mt RS(B) B          &none                        &mt RS(N) N             &mt RS(M) M     &comma_comma        &dot_dot            &kp FSLH            &kp BSPC
+                &kp ESC             &mt RS(Q) Q         &mt RS(W) W           &mt RS(E) E        &mt RS(R) R        &mt RS(T) T          &kp C_VOL_UP                 &mt RS(Y) Y             &mt RS(U) U     &mt RS(I) I         &mt RS(O) O         &mt RS(P) P         &kp BSPC
+                &kp TAB             &mt RS(A) A         &mt RS(S) S           &mt RS(D) D        &mt RS(F) F        &mt RS(G) G          &kp C_VOL_DN                 &mt RS(H) H             &mt RS(J) J     &mt RS(K) K         &mt RS(L) L         &mt RS(SEMI) SEMI   &kp RETURN
+                &kp LSHIFT          &mt RS(Z) Z         &mt RS(X) X           &mt RS(C) C        &mt RS(V) V        &mt RS(B) B          &none                        &mt RS(N) N             &mt RS(M) M     &comma_comma        &dot_dot            &kp BSPC            &kp BSPC
                                                         &mkp RCLK             &sk LEFT_CONTROL   &lt NUMBERS SPACE  &kp LEFT_GUI         &none                        &kp LALT                &lt NAVIGATION SPACE                &lt MOUSE SPACE
-                                                                                                                                         &kp K_MUTE
+                                                                                                                                         &kp C_MUTE 
             >;
 
             label = "QWERTY";
@@ -139,9 +142,9 @@
            /* MOUSE
                Move mouse and navigation shortcuts
                ╭─────────────────────────────────────────╮    ╭──────╮╭─────────────────────────────────────────╮
-               | TAB  |  Q   |  W   |  E   |   R  |   T  |    |  ↑   ||  Y   |  U   |  I   |  O   |  P   | BKSP |  
-               | SHIFT|  A   |  S   |  D   |   F  |   G  |    |  ↓   ||  H   |  J   |  K   |  L   |  ;   |  '   | 
-               | CTRL |  Z   |  X   |  C   |   V  |   B  |    |  ←   ||  N   |  M   |  ,   |  .   |  /   | ESC  |
+               | TAB  |      | LCLK |  MU  | RCLK |   T  |    |  ↑   ||  Y   |  U   |  I   |  O   |  P   | BKSP |  
+               | SHIFT|      |  ML  |  MD  |  ML  |   G  |    |  ↓   ||  H   |  J   |  K   |  L   |  ;   |  '   | 
+               | CTRL |      |      | LA(L)| LA(R)|   B  |    |  ←   ||  N   |  M   |  ,   |  .   |  /   | ESC  |
                ╰────────────────────╮  GUI | NUM  | SPC  |    |  →   || ENT  |  RS  | ALT  ╭────────────────────╯ 
                                     ╰────────────────────╯    | ENT  |╰────────────────────╯
                                                               ╰──────╯                                           
