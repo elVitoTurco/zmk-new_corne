@@ -7,7 +7,7 @@ layers:
   - {t: E, h: Sft+ E}
   - {t: R, h: Sft+ R}
   - {t: T, h: Sft+ T}
-  - VOL UP
+  - $$mdi:volume-high$$
   - {t: Y, h: Sft+ Y}
   - {t: U, h: Sft+ U}
   - {t: I, h: Sft+ I}
@@ -20,12 +20,12 @@ layers:
   - {t: D, h: Sft+ D}
   - {t: F, h: Sft+ F}
   - {t: G, h: Sft+ G}
-  - VOL DN
+  - $$mdi:volume-low$$
   - {t: H, h: Sft+ H}
   - {t: J, h: Sft+ J}
   - {t: K, h: Sft+ K}
   - {t: L, h: Sft+ L}
-  - {t: ;, s: ':'}
+  - {t: ;, h: Sft+ ;, s: ':'}
   - RETURN
   - $$mdi:apple-keyboard-shift$$
   - {t: Z, h: Sft+ Z}
@@ -38,7 +38,7 @@ layers:
   - {t: M, h: Sft+ M}
   - '&comma_comma'
   - '&dot_dot'
-  - {t: /, s: '?'}
+  - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:mouse-right-click-outline$$
   - {t: '$$mdi:apple-keyboard-control$$', h: '$$mdi:gesture-tap-hold$$'}
@@ -48,7 +48,7 @@ layers:
   - $$mdi:apple-keyboard-option$$
   - {t: '$$mdi:keyboard-space$$', h: navigation}
   - {t: '$$mdi:keyboard-space$$', h: mouse}
-  - MUTE
+  - $$mdi:volume-off$$
   mouse:
   - $$mdi:keyboard-esc$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
