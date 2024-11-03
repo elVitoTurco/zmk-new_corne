@@ -88,13 +88,8 @@
 
     };
 
-    // add control T
-    // add control 1
-    // add alt enter
     // outer column potentaliiy usable
-    // add that left click buttonw
     
-
 
     scroll_encoder: scroll_encoder {
         compatible = "zmk,behavior-sensor-rotate";
@@ -170,13 +165,13 @@
         navigation_layer {
             display-name = "NAV";
 
-           /* BASE
-               Contains autoshift and querty characters
+           /* NAVIGATION
+               
                ╭─────────────────────────────────────────╮    ╭──────╮╭─────────────────────────────────────────╮
-               | TAB  |  Q   |  W   |  E   |   R  |   T  |    |  ↑   ||  Y   |  U   |  I   |  O   |  P   | BKSP |  
-               | SHIFT|  A   |  S   |  D   |   F  |   G  |    |  ↓   ||  H   |  J   |  K   |  L   |  ;   |  '   | 
-               | CTRL |  Z   |  X   |  C   |   V  |   B  |    |  ←   ||  N   |  M   |  ,   |  .   |  /   | ESC  |
-               ╰────────────────────╮  GUI | NUM  | SPC  |    |  →   || ENT  |  RS  | ALT  ╭────────────────────╯ 
+               | TAB  |      | PGDN |  UP  |      |   T  |    |  ↑   ||  Y   |  U   |  I   |  O   |  P   | BKSP |  
+               | SHIFT| HOME | LEFT | DOWN |RIGHT |   G  |    |  ↓   ||  H   |  J   |  K   |  L   |  ;   |  '   | 
+               | CTRL |  Z   |  X   |  C   |      |   B  |    |  ←   ||  N   |  M   |  ,   |  .   |  /   | ESC  |
+               ╰────────────────────╮  LCTR| GUI  | SPC  |    |  →   || ENT  |  RS  | ALT  ╭────────────────────╯ 
                                     ╰────────────────────╯    | ENT  |╰────────────────────╯
                                                               ╰──────╯                                           
             */
@@ -199,8 +194,8 @@
         numbers_layer {
             display-name = "NUMBER";
 
-           /* BASE
-               Contains autoshift and querty characters
+           /* NUMBER
+               
                ╭─────────────────────────────────────────╮    ╭──────╮╭─────────────────────────────────────────╮
                | TAB  |  Q   |  W   |  E   |   R  |   T  |    |  ↑   ||  Y   |  U   |  I   |  O   |  P   | BKSP |  
                | SHIFT|  A   |  S   |  D   |   F  |   G  |    |  ↓   ||  H   |  J   |  K   |  L   |  ;   |  '   | 
