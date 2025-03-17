@@ -172,7 +172,7 @@ layers:
   - '&open_symbol'
   - '&close_symbol'
   - {t: _, h: '-'}
-  - {t: EQUALS, h: +}
+  - {t: '=', h: +, s: +}
   - RETURN
   - F1
   - F2
