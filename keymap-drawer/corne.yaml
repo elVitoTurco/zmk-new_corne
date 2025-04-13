@@ -178,7 +178,7 @@ layers:
   - F2
   - F3
   - Alt+F4
-  - Ctl+F5
+  - F5
   - F6
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - F7
