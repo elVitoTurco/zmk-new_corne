@@ -166,7 +166,7 @@ layers:
   - AltGr+W
   - {t: 'Sft+[', s: 'Sft+{'}
   - {t: ;, h: '$$mdi:apple-keyboard-shift$$', s: ':'}
-  - '&bars'
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - $$mdi:apple-keyboard-caps$$
   - '&open_symbol'
