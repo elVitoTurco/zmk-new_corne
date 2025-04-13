@@ -86,14 +86,6 @@
             bindings = <&kp COMMA>, <&kp SLASH>;
         };
 
-        bars: bars {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BARS";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp NON_US_BACKSLASH>, <&kp LS(NON_US_BSLH)>, <&kp KP_SLASH>;
-        };
-
     };
     
 
