@@ -86,7 +86,7 @@
             bindings = <&kp COMMA>, <&kp SLASH>;
         };
 
-        close_symbol: bars {
+        bars: bars {
             compatible = "zmk,behavior-tap-dance";
             label = "BARS";
             #binding-cells = <0>;
