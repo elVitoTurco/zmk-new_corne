@@ -1,3 +1,4 @@
+
 #include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -172,7 +173,7 @@
             >;
 
             label = "MOUSE";
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         navigation_layer {
@@ -197,7 +198,7 @@
             >;
 
             label = "NAV";
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         numbers_layer {
@@ -222,7 +223,7 @@
             >;
 
             label = "NUMBER";
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         config_layer {
