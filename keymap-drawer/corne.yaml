@@ -212,7 +212,7 @@ layers:
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:keyboard-tab$$
   - {t: '''', s: '"'}
-  - AltGr+W
+  - {t: AltGr+W, s: Sft+/}
   - {t: 'Sft+[', s: 'Sft+{'}
   - {t: ;, h: '$$mdi:apple-keyboard-shift$$', s: ':'}
   - '&bars'
