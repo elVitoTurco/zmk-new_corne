@@ -6,6 +6,8 @@
 #include <dt-bindings/zmk/outputs.h>
 // Removed RGB include to save battery
 
+// You can keep these defines, but they'll produce warnings as they're redefining values
+// Consider removing if you don't need custom values
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20
 
@@ -16,12 +18,12 @@
 #define CONFIG 4  // Added CONFIG layer
 
 &mmv {
-	time-to-max-speed-ms = <500>;
+    time-to-max-speed-ms = <500>;
 };
 
 &mt {
-	tapping-term-ms = <300>;
-	flavor = "tap-preferred";
+    tapping-term-ms = <300>;
+    flavor = "tap-preferred";
 };
 
 / {
@@ -38,17 +40,9 @@
     };
 
     behaviors {
-        mmv {
-            acceleration-exponent = <1>;
-            time-to-max-speed-ms = <900>;
-            delay-ms = <0>;
-        };
-
-        msc {
-            acceleration-exponent = <1>;
-            time-to-max-speed-ms = <400>;
-            delay-ms = <0>;
-        };
+        // Remove the mmv and msc behavior definitions here since you're already 
+        // configuring mmv at the global level with &mmv above
+        // The issue is you're redefining mmv and msc inside the behaviors section
 
         open_symbol: td_open {
             compatible = "zmk,behavior-tap-dance";
@@ -134,6 +128,10 @@
             >;
         };
 
+        // Include your other layers here
+        // ...
+
+        // Add the new CONFIG layer
         config_layer {
             display-name = "CONFIG";
 
