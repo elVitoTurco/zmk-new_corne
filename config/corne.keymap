@@ -137,6 +137,19 @@
             bindings = <&kp END>, <&kp LG(RIGHT)>; // Default Windows, morph to Mac
             mods = <(MOD_LGUI)>; // Trigger Mac behavior when Command is active
         };
+
+        // Cross-platform question mark - Windows vs Mac compatibility
+        // Windows: Right Alt + W | Mac: Shift + / (standard question mark)
+        question_mark: question_mark {
+            compatible = "zmk,behavior-mod-morph";
+            label = "QUESTION_MARK";
+            #binding-cells = <0>;
+            // Default Windows, morph to Mac
+            bindings = <&kp RA(W)>, <&kp LS(SLASH)>;
+            // Trigger Mac behavior when Command is active
+            mods = <(MOD_LGUI)>;
+        };
+
     };
 
     // Rotary encoder configuration for volume control
@@ -248,7 +261,7 @@
             */
             bindings = <
                 &mt LS(GRAVE) GRAVE         &mt EXCLAMATION NUMBER_1                &mt AT_SIGN NUMBER_2  &mt HASH NUMBER_3      &mt DOLLAR NUMBER_4      &mt PERCENT NUMBER_5                  &mmv MOVE_UP                 &mt CARET NUMBER_6      &mt AMPERSAND NUMBER_7   &mt ASTERISK NUMBER_8     &mt LEFT_PARENTHESIS NUMBER_9    &mt RIGHT_PARENTHESIS NUMBER_0             &kp BSPC
-                &kp TAB                     &kp SINGLE_QUOTE                        &kp RA(W)             &kp LS(LEFT_BRACKET)   &mt LEFT_SHIFT SEMICOLON &bars                                 &mmv MOVE_DOWN               &kp CAPS                &open_symbol             &close_symbol             &mt MINUS UNDER                  &mt PLUS EQUAL                             &kp RETURN
+                &kp TAB                     &kp SINGLE_QUOTE                        &question_mark        &kp LS(LEFT_BRACKET)   &mt LEFT_SHIFT SEMICOLON &bars                                 &mmv MOVE_DOWN               &kp CAPS                &open_symbol             &close_symbol             &mt MINUS UNDER                  &mt PLUS EQUAL                             &kp RETURN
                 &kp F1                      &kp F2                                  &kp F3                &kp LA(F4)             &kp F5                   &kp F6                                &mmv MOVE_LEFT               &kp F7                  &kp F8                   &kp F9                    &kp F10                          &kp F11                                    &kp F12
                                                                                     &mkp LCLK             &mkp RCLK              &mkp LCLK                &mkp MCLK                             &mmv MOVE_RIGHT              &none                   &none                    &none
                                                                                                                                                                           &mkp RCLK // Right click on encoder press
