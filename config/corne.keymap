@@ -40,117 +40,124 @@
         };
     };
 
-    behaviors {
-        // Mouse movement behavior - tuned for smooth cursor control
-        mmv {
-            acceleration-exponent = <1>;
-            time-to-max-speed-ms = <900>;
-            delay-ms = <0>;
-        };
-
-        // Mouse scroll behavior - faster acceleration for quick scrolling
-        msc {
-            acceleration-exponent = <1>;
-            time-to-max-speed-ms = <400>;
-            delay-ms = <0>;
-        };
-
-        // Tap dance for opening brackets/symbols: { ( [ <
-        open_symbol: td_open {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_OPEN";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp RS(RIGHT_BRACKET)>, <&kp RS(NUMBER_9)>, <&kp RIGHT_BRACKET>, <&kp LT>;
-        };
-
-        // Tap dance for closing brackets/symbols: } ) ] >
-        close_symbol: td_close {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_CLOSE";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp RS(BACKSLASH)>, <&kp RS(NUMBER_0)>, <&kp BACKSLASH>, <&kp GT>;
-        };
-
-        // Tap dance for period and question mark
-        dot_dot: dot_dot {
-            compatible = "zmk,behavior-tap-dance";
-            label = "DOT_DOT";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp PERIOD>, <&kp LS(SLASH)>;
-        };
-
-        // Tap dance for comma and forward slash
-        comma_comma: comma_comma {
-            compatible = "zmk,behavior-tap-dance";
-            label = "COMMA_COMMA";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp COMMA>, <&kp SLASH>;
-        };
-
-        // Tap dance for various bar symbols: / | \
-        bars: bars {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BARS";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp KP_SLASH>, <&kp LS(NON_US_BSLH)>, <&kp NON_US_BACKSLASH>;
-        };
-
-        // Cross-platform tab navigation - Windows vs Mac compatibility
-        // Windows: Ctrl+Page Up/Down | Mac: Cmd+Option+Left/Right
-        tab_left: tab_left {
-            compatible = "zmk,behavior-mod-morph";
-            label = "TAB_LEFT";
-            #binding-cells = <0>;
-            bindings = <&kp LC(PAGE_UP)>, <&kp LG(LA(LEFT))>; // Default Windows, morph to Mac
-            mods = <(MOD_LGUI)>; // Trigger Mac behavior when Command is active
-        };
-
-        tab_right: tab_right {
-            compatible = "zmk,behavior-mod-morph";
-            label = "TAB_RIGHT";
-            #binding-cells = <0>;
-            bindings = <&kp LC(PAGE_DOWN)>, <&kp LG(LA(RIGHT))>; // Default Windows, morph to Mac
-            mods = <(MOD_LGUI)>; // Trigger Mac behavior when Command is active
-        };
-
-        // Cross-platform HOME key - Windows vs Mac compatibility
-        // Windows: HOME key | Mac: Cmd+Left Arrow (beginning of line)
-        home_key: home_key {
-            compatible = "zmk,behavior-mod-morph";
-            label = "HOME_KEY";
-            #binding-cells = <0>;
-            bindings = <&kp HOME>, <&kp LG(LEFT)>; // Default Windows, morph to Mac
-            mods = <(MOD_LGUI)>; // Trigger Mac behavior when Command is active
-        };
-
-        // Cross-platform END key - Windows vs Mac compatibility
-        // Windows: END key | Mac: Cmd+Right Arrow (end of line)
-        end_key: end_key {
-            compatible = "zmk,behavior-mod-morph";
-            label = "END_KEY";
-            #binding-cells = <0>;
-            bindings = <&kp END>, <&kp LG(RIGHT)>; // Default Windows, morph to Mac
-            mods = <(MOD_LGUI)>; // Trigger Mac behavior when Command is active
-        };
-
-        // Cross-platform question mark - Windows vs Mac compatibility
-        // Windows: Right Alt + W | Mac: Shift + / (standard question mark)
-        question_mark: question_mark {
-            compatible = "zmk,behavior-mod-morph";
-            label = "QUESTION_MARK";
-            #binding-cells = <0>;
-            // Default Windows, morph to Mac
-            bindings = <&kp RA(W)>, <&kp LS(SLASH)>;
-            // Trigger Mac behavior when Command is active
-            mods = <(MOD_LGUI)>;
-        };
-
-    };
+  behaviors {
+      // Mouse movement behavior - tuned for smooth cursor control
+      mmv {
+          acceleration-exponent = <1>;
+          time-to-max-speed-ms = <900>;
+          delay-ms = <0>;
+      };
+  
+      // Mouse scroll behavior - faster acceleration for quick scrolling
+      msc {
+          acceleration-exponent = <1>;
+          time-to-max-speed-ms = <400>;
+          delay-ms = <0>;
+      };
+  
+      // Tap dance for opening brackets/symbols: { ( [ <
+      open_symbol: td_open {
+          compatible = "zmk,behavior-tap-dance";
+          label = "TD_OPEN";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&kp RS(RIGHT_BRACKET)>, <&kp RS(NUMBER_9)>, <&kp RIGHT_BRACKET>, <&kp LT>;
+      };
+  
+      // Tap dance for closing brackets/symbols: } ) ] >
+      close_symbol: td_close {
+          compatible = "zmk,behavior-tap-dance";
+          label = "TD_CLOSE";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&kp RS(BACKSLASH)>, <&kp RS(NUMBER_0)>, <&kp BACKSLASH>, <&kp GT>;
+      };
+  
+      // Tap dance for period and question mark
+      dot_dot: dot_dot {
+          compatible = "zmk,behavior-tap-dance";
+          label = "DOT_DOT";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&kp PERIOD>, <&kp LS(SLASH)>;
+      };
+  
+      // Tap dance for comma and forward slash
+      comma_comma: comma_comma {
+          compatible = "zmk,behavior-tap-dance";
+          label = "COMMA_COMMA";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&kp COMMA>, <&kp SLASH>;
+      };
+  
+      // Tap dance for various bar symbols: / | \
+      bars: bars {
+          compatible = "zmk,behavior-tap-dance";
+          label = "BARS";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&kp KP_SLASH>, <&kp LS(NON_US_BSLH)>, <&kp NON_US_BACKSLASH>;
+      };
+  
+      // Cross-platform tab navigation - Windows vs Mac compatibility
+      // Windows: Ctrl+Page Up/Down | Mac: Cmd+Option+Left/Right
+      tab_left: tab_left {
+          compatible = "zmk,behavior-mod-morph";
+          label = "TAB_LEFT";
+          #binding-cells = <0>;
+          // Default Windows, morph to Mac
+          bindings = <&kp LC(PAGE_UP)>, <&kp LG(LA(LEFT))>;
+          // Trigger Mac behavior when Command is active
+          mods = <(MOD_LGUI)>;
+      };
+  
+      tab_right: tab_right {
+          compatible = "zmk,behavior-mod-morph";
+          label = "TAB_RIGHT";
+          #binding-cells = <0>;
+          // Default Windows, morph to Mac
+          bindings = <&kp LC(PAGE_DOWN)>, <&kp LG(LA(RIGHT))>;
+          // Trigger Mac behavior when Command is active
+          mods = <(MOD_LGUI)>;
+      };
+  
+      // Cross-platform HOME key - Windows vs Mac compatibility
+      // Windows: HOME key | Mac: Cmd+Left Arrow (beginning of line)
+      home_key: home_key {
+          compatible = "zmk,behavior-mod-morph";
+          label = "HOME_KEY";
+          #binding-cells = <0>;
+          // Default Windows, morph to Mac
+          bindings = <&kp HOME>, <&kp LG(LEFT)>;
+          // Trigger Mac behavior when Command is active
+          mods = <(MOD_LGUI)>;
+      };
+  
+      // Cross-platform END key - Windows vs Mac compatibility
+      // Windows: END key | Mac: Cmd+Right Arrow (end of line)
+      end_key: end_key {
+          compatible = "zmk,behavior-mod-morph";
+          label = "END_KEY";
+          #binding-cells = <0>;
+          // Default Windows, morph to Mac
+          bindings = <&kp END>, <&kp LG(RIGHT)>;
+          // Trigger Mac behavior when Command is active
+          mods = <(MOD_LGUI)>;
+      };
+  
+      // Cross-platform question mark - Windows vs Mac compatibility
+      // Windows: Right Alt + W | Mac: Shift + / (standard question mark)
+      question_mark: question_mark {
+          compatible = "zmk,behavior-mod-morph";
+          label = "QUESTION_MARK";
+          #binding-cells = <0>;
+          // Default Windows, morph to Mac
+          bindings = <&kp RA(W)>, <&kp LS(SLASH)>;
+          // Trigger Mac behavior when Command is active
+          mods = <(MOD_LGUI)>;
+      };
+  };
 
     // Rotary encoder configuration for volume control
     scroll_encoder: scroll_encoder {
