@@ -87,8 +87,24 @@
             tapping-term-ms = <200>;
             bindings = <&kp KP_SLASH>, <&kp LS(NON_US_BSLH)>, <&kp NON_US_BACKSLASH>;
         };
-    };
 
+        // Conditional behavior for tab navigation
+        tab_left: tab_left {
+            compatible = "zmk,behavior-mod-morph";
+            label = "TAB_LEFT";
+            #binding-cells = <0>;
+            bindings = <&kp LC(PAGE_UP)>, <&kp LG(LA(LEFT))>;
+            mods = <(MOD_LGUI)>;
+        };
+
+        tab_right: tab_right {
+            compatible = "zmk,behavior-mod-morph";
+            label = "TAB_RIGHT";
+            #binding-cells = <0>;
+            bindings = <&kp LC(PAGE_DOWN)>, <&kp LG(LA(RIGHT))>;
+            mods = <(MOD_LGUI)>;
+        };
+    };
 
     scroll_encoder: scroll_encoder {
         compatible = "zmk,behavior-sensor-rotate";
@@ -158,7 +174,7 @@
                ╭─────────────────────────────────────────╮    ╭──────╮╭─────────────────────────────────────────╮
                | ESC  |      |LCLK  | M_UP |RCLK  |      |    | M_UP ||VOL_UP|SCR_UP|      |SCR_DN|      | BKSP |
                | TAB  |      | M_L  | M_DN | M_R  |      |    | M_DN ||VOL_DN|      |      |      |      | ENT  |
-               |SHIFT |      |      |AL_LFT|AL_RGT|      |    | M_L  || MUTE |CTR_UP|CTR_DN|      |      | BKSP |
+               |SHIFT |      |      |AL_LFT|AL_RGT|      |    | M_L  || MUTE |TAB_LF|TAB_RT|      |      | BKSP |
                ╰────────────────────╮ GUI  | GUI  |LCLK  |    | M_R  ||RCLK  |      |      ╭────────────────────╯
                                     ╰────────────────────╯    |RCLK  |╰────────────────────╯
                                                               ╰──────╯
@@ -166,7 +182,7 @@
             bindings = <
                 &kp ESC             &none               &mkp LCLK             &mmv MOVE_UP        &mkp RCLK          &none                &mmv MOVE_UP                 &kp C_VOL_UP            &msc SCRL_UP         &none                     &msc SCRL_DOWN           &none            &kp BSPC
                 &kp TAB             &none               &mmv MOVE_LEFT        &mmv MOVE_DOWN      &mmv MOVE_RIGHT    &none                &mmv MOVE_DOWN               &kp C_VOL_DN            &none                &none                     &none                    &none            &kp RETURN
-                &kp LSHIFT          &none               &none                 &kp LA(LEFT)        &kp LA(RIGHT)      &none                &mmv MOVE_LEFT               &kp C_MUTE              &kp LC(PAGE_UP)      &kp LC(PAGE_DOWN)         &none                    &none            &kp BSPC
+                &kp LSHIFT          &none               &none                 &kp LA(LEFT)        &kp LA(RIGHT)      &none                &mmv MOVE_LEFT               &kp C_MUTE              &tab_left            &tab_right                &none                    &none            &kp BSPC
                                                         &kp LEFT_GUI          &kp LEFT_GUI        &mkp LCLK          &mkp MCLK            &mmv MOVE_RIGHT              &mkp RCLK               &none                &none
                                                                                                                                           &mkp RCLK
             >;
@@ -183,7 +199,7 @@
                ╭─────────────────────────────────────────╮    ╭──────╮╭─────────────────────────────────────────╮
                | ESC  |      |PGDN  |  UP  |PGUP  |      |    | M_UP ||      |SCR_UP|SCR_DN|SCR_DN| BKSP | BKSP |
                | TAB  | HOME | LEFT | DOWN |RIGHT | END  |    | M_DN ||      |SHIFT |CTRL  |  ALT | ENT  | ENT  |
-               |SHIFT |  Z   |  X   |  C   |  V   |      |    | M_L  || DEL  | INS  |CTR_DN|      | BKSP | BKSP |
+               |SHIFT |  Z   |  X   |  C   |  V   |      |    | M_L  || DEL  | INS  |TAB_LF|      | BKSP | BKSP |
                ╰────────────────────╮LCLK  |LCTRL | GUI  |    | M_R  ||RCLK  |      |      ╭────────────────────╯
                                     ╰────────────────────╯    |RCLK  |╰────────────────────╯
                                                               ╰──────╯
@@ -191,7 +207,7 @@
             bindings = <
                 &kp ESC             &none               &kp PAGE_DOWN         &kp UP              &kp PAGE_UP        &none                &mmv MOVE_UP                 &none                   &msc SCRL_UP         &msc SCRL_DOWN            &msc SCRL_DOWN           &kp BSPC         &kp BSPC
                 &kp TAB             &kp HOME            &kp LEFT              &kp DOWN            &kp RIGHT          &kp END              &mmv MOVE_DOWN               &none                   &kp LEFT_SHIFT       &kp LEFT_CONTROL          &kp LALT                 &kp RETURN       &kp RETURN
-                &kp LSHIFT          &kp Z               &kp X                 &kp C               &kp V              &none                &mmv MOVE_LEFT               &kp DEL                 &kp INSERT           &kp LC(PAGE_DOWN)         &none                    &kp BSPC         &kp BSPC
+                &kp LSHIFT          &kp Z               &kp X                 &kp C               &kp V              &none                &mmv MOVE_LEFT               &kp DEL                 &kp INSERT           &tab_left                 &none                    &kp BSPC         &kp BSPC
                                                         &mkp LCLK             &sk LEFT_CONTROL    &kp LEFT_GUI       &mkp MCLK            &mmv MOVE_RIGHT              &mkp RCLK               &none                &none
                                                                                                                                           &mkp RCLK
             >;
@@ -241,7 +257,7 @@
             bindings = <
                 &bt BT_CLR          &bt BT_SEL 0        &bt BT_SEL 1          &bt BT_SEL 2       &bt BT_SEL 3       &bt BT_SEL 4         &none                       &to WIN                 &to MAC             &none                     &none                    &none            &none
              // Clear all BT      // Profile 0:        // Profile 1:          // Profile 2:     // Profile 3:     // Profile 4:
-             // connections       // Work Laptop       // Personal PC         // Tablet         // Phone          // Gaming PC
+             // connections       // Work Laptop       // Personal PC         // Tablet         // Phone          // Other devices
                 &kp TAB             &none               &none                 &none              &none              &none                &none                       &none                   &none               &none                     &none                    &none            &none
                 &kp LSHIFT          &none               &none                 &none              &none              &bootloader          &none                       &out OUT_USB            &out OUT_BLE        &none                     &none                    &none            &none
              //                                                                                  // Flash firmware
