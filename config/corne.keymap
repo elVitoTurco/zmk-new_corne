@@ -5,11 +5,9 @@
 #include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/outputs.h>
 
-// Mouse movement and scroll sensitivity settings
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20
 
-// Layer definitions for easy reference
 #define WIN 0
 #define MAC 1
 #define MOUSE 2
@@ -17,12 +15,10 @@
 #define NUMBERS 4
 #define CONFIG 5
 
-// Mouse movement configuration - slower acceleration for precision
 &mmv {
 	time-to-max-speed-ms = <500>;
 };
 
-// Mod-tap configuration - prefer tap over hold for better typing experience
 &mt {
 	tapping-term-ms = <300>;
 	flavor = "tap-preferred";
@@ -31,135 +27,85 @@
 / {
     combos {
         compatible = "zmk,combos";
-        // Combo to access CONFIG layer: Hold A+S+D+F simultaneously
         combo_config {
             timeout-ms = <50>;
-            key-positions = <14 15 16 17>; // A, S, D, F positions on QWERTY
+            key-positions = <14 15 16 17>; // A, S, D, F positions
             bindings = <&mo CONFIG>;
-            layers = <WIN MAC>; // Only active on main typing layers
+            layers = <WIN MAC>;
         };
     };
 
-  behaviors {
-      // Mouse movement behavior - tuned for smooth cursor control
-      mmv {
-          acceleration-exponent = <1>;
-          time-to-max-speed-ms = <900>;
-          delay-ms = <0>;
-      };
-  
-      // Mouse scroll behavior - faster acceleration for quick scrolling
-      msc {
-          acceleration-exponent = <1>;
-          time-to-max-speed-ms = <400>;
-          delay-ms = <0>;
-      };
-  
-      // Tap dance for opening brackets/symbols: { ( [ <
-      open_symbol: td_open {
-          compatible = "zmk,behavior-tap-dance";
-          label = "TD_OPEN";
-          #binding-cells = <0>;
-          tapping-term-ms = <200>;
-          bindings = <&kp RS(RIGHT_BRACKET)>, <&kp RS(NUMBER_9)>, <&kp RIGHT_BRACKET>, <&kp LT>;
-      };
-  
-      // Tap dance for closing brackets/symbols: } ) ] >
-      close_symbol: td_close {
-          compatible = "zmk,behavior-tap-dance";
-          label = "TD_CLOSE";
-          #binding-cells = <0>;
-          tapping-term-ms = <200>;
-          bindings = <&kp RS(BACKSLASH)>, <&kp RS(NUMBER_0)>, <&kp BACKSLASH>, <&kp GT>;
-      };
-  
-      // Tap dance for period and question mark
-      dot_dot: dot_dot {
-          compatible = "zmk,behavior-tap-dance";
-          label = "DOT_DOT";
-          #binding-cells = <0>;
-          tapping-term-ms = <200>;
-          bindings = <&kp PERIOD>, <&kp LS(SLASH)>;
-      };
-  
-      // Tap dance for comma and forward slash
-      comma_comma: comma_comma {
-          compatible = "zmk,behavior-tap-dance";
-          label = "COMMA_COMMA";
-          #binding-cells = <0>;
-          tapping-term-ms = <200>;
-          bindings = <&kp COMMA>, <&kp SLASH>;
-      };
-  
-      // Tap dance for various bar symbols: / | \
-      bars: bars {
-          compatible = "zmk,behavior-tap-dance";
-          label = "BARS";
-          #binding-cells = <0>;
-          tapping-term-ms = <200>;
-          bindings = <&kp KP_SLASH>, <&kp LS(NON_US_BSLH)>, <&kp NON_US_BACKSLASH>;
-      };
-  
-      // Cross-platform tab navigation - Windows vs Mac compatibility
-      // Windows: Ctrl+Page Up/Down | Mac: Cmd+Option+Left/Right
-      tab_left: tab_left {
-          compatible = "zmk,behavior-mod-morph";
-          label = "TAB_LEFT";
-          #binding-cells = <0>;
-          // Default Windows, morph to Mac
-          bindings = <&kp LC(PAGE_UP)>, <&kp LG(LA(LEFT))>;
-          // Trigger Mac behavior when Command is active
-          mods = <(MOD_LGUI)>;
-      };
-  
-      tab_right: tab_right {
-          compatible = "zmk,behavior-mod-morph";
-          label = "TAB_RIGHT";
-          #binding-cells = <0>;
-          // Default Windows, morph to Mac
-          bindings = <&kp LC(PAGE_DOWN)>, <&kp LG(LA(RIGHT))>;
-          // Trigger Mac behavior when Command is active
-          mods = <(MOD_LGUI)>;
-      };
-  
-      // Cross-platform HOME key - Windows vs Mac compatibility
-      // Windows: HOME key | Mac: Cmd+Left Arrow (beginning of line)
-      home_key: home_key {
-          compatible = "zmk,behavior-mod-morph";
-          label = "HOME_KEY";
-          #binding-cells = <0>;
-          // Default Windows, morph to Mac
-          bindings = <&kp HOME>, <&kp LG(LEFT)>;
-          // Trigger Mac behavior when Command is active
-          mods = <(MOD_LGUI)>;
-      };
-  
-      // Cross-platform END key - Windows vs Mac compatibility
-      // Windows: END key | Mac: Cmd+Right Arrow (end of line)
-      end_key: end_key {
-          compatible = "zmk,behavior-mod-morph";
-          label = "END_KEY";
-          #binding-cells = <0>;
-          // Default Windows, morph to Mac
-          bindings = <&kp END>, <&kp LG(RIGHT)>;
-          // Trigger Mac behavior when Command is active
-          mods = <(MOD_LGUI)>;
-      };
-  
-      // Cross-platform question mark - Windows vs Mac compatibility
-      // Windows: Right Alt + W | Mac: Shift + / (standard question mark)
-      question_mark: question_mark {
-          compatible = "zmk,behavior-mod-morph";
-          label = "QUESTION_MARK";
-          #binding-cells = <0>;
-          // Default Windows, morph to Mac
-          bindings = <&kp RA(W)>, <&kp LS(SLASH)>;
-          // Trigger Mac behavior when Command is active
-          mods = <(MOD_LGUI)>;
-      };
-  };
+    behaviors {
+        mmv {
+            acceleration-exponent = <1>;
+            time-to-max-speed-ms = <900>;
+            delay-ms = <0>;
+        };
 
-    // Rotary encoder configuration for volume control
+        msc {
+            acceleration-exponent = <1>;
+            time-to-max-speed-ms = <400>;
+            delay-ms = <0>;
+        };
+
+        open_symbol: td_open {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_OPEN";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp RS(RIGHT_BRACKET)>, <&kp RS(NUMBER_9)>, <&kp RIGHT_BRACKET>, <&kp LT>;
+        };
+
+        close_symbol: td_close {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_CLOSE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp RS(BACKSLASH)>, <&kp RS(NUMBER_0)>, <&kp BACKSLASH>, <&kp GT>;
+        };
+
+        dot_dot: dot_dot {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DOT_DOT";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp PERIOD>, <&kp LS(SLASH)>;
+        };
+
+        comma_comma: comma_comma {
+            compatible = "zmk,behavior-tap-dance";
+            label = "COMMA_COMMA";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp COMMA>, <&kp SLASH>;
+        };
+
+        bars: bars {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BARS";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp KP_SLASH>, <&kp LS(NON_US_BSLH)>, <&kp NON_US_BACKSLASH>;
+        };
+
+        // Conditional behavior for tab navigation
+        tab_left: tab_left {
+            compatible = "zmk,behavior-mod-morph";
+            label = "TAB_LEFT";
+            #binding-cells = <0>;
+            bindings = <&kp LC(PAGE_UP)>, <&kp LG(LA(LEFT))>;
+            mods = <(MOD_LGUI)>;
+        };
+
+        tab_right: tab_right {
+            compatible = "zmk,behavior-mod-morph";
+            label = "TAB_RIGHT";
+            #binding-cells = <0>;
+            bindings = <&kp LC(PAGE_DOWN)>, <&kp LG(LA(RIGHT))>;
+            mods = <(MOD_LGUI)>;
+        };
+    };
+
     scroll_encoder: scroll_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
@@ -170,137 +116,157 @@
     keymap {
         compatible = "zmk,keymap";
 
-        // Windows/Linux primary layer - optimized for productivity
         win_layer {
             display-name = "WIN";
 
-            /* WIN LAYER LAYOUT
-               Standard QWERTY with mod-tap for capital letters
-               Left side: Standard typing + modifiers
-               Right side: Mouse integration via rotary encoder
-               Thumb cluster: Layer access and common modifiers
+            /* WIN
+               QWERTY layout with mod-tap for uppercase letters
+               ╭─────────────────────────────────────────╮    ╭──────╮╭─────────────────────────────────────────╮
+               | ESC  |  Q   |  W   |  E   |   R  |   T  |    |VOL UP||  Y   |  U   |  I   |  O   |  P   | BKSP |
+               | TAB  |  A   |  S   |  D   |   F  |   G  |    |VOL DN||  H   |  J   |  K   |  L   |  ;   | ENT  |
+               |SHIFT |  Z   |  X   |  C   |   V  |   B  |    |PREV  ||  N   |  M   |  ,/  |  .?  | BKSP | BKSP |
+               ╰────────────────────╮ MUTE |LCTRL | NUM  |    |NEXT  || LALT | NAV  | MENU ╭────────────────────╯
+                                    ╰────────────────────╯    |PLAY  |╰────────────────────╯
+                                                              ╰──────╯
             */
             bindings = <
                 &kp ESC             &mt RS(Q) Q         &mt RS(W) W           &mt RS(E) E        &mt RS(R) R        &mt RS(T) T          &kp C_VOL_UP                &mt RS(Y) Y             &mt RS(U) U     &mt RS(I) I         &mt RS(O) O         &mt RS(P) P         &kp BSPC
                 &kp TAB             &mt RS(A) A         &mt RS(S) S           &mt RS(D) D        &mt RS(F) F        &mt RS(G) G          &kp C_VOL_DN                &mt RS(H) H             &mt RS(J) J     &mt RS(K) K         &mt RS(L) L         &mt RS(SEMI) SEMI   &kp RETURN
                 &kp LSHIFT          &mt RS(Z) Z         &mt RS(X) X           &mt RS(C) C        &mt RS(V) V        &mt RS(B) B          &kp C_PREV                  &mt RS(N) N             &mt RS(M) M     &comma_comma        &dot_dot            &kp BSPC            &kp BSPC
                                                         &mkp C_MUTE           &sk LEFT_CONTROL   &lt NUMBERS SPACE  &kp LEFT_GUI         &kp C_NEXT                  &kp LALT                &lt NAVIGATION SPACE                &lt MOUSE K_APP
-                                                                                                                                         &kp C_PP // Media play/pause
+                                                                                                                                         &kp C_PP
             >;
 
             label = "WIN";
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; // Rotary encoder volume control
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
-        // Mac primary layer - adapted for macOS conventions
         mac_layer {
             display-name = "MAC";
 
-            /* MAC LAYER LAYOUT
-               Same as Windows but with Command instead of Control
-               Cross-platform behaviors automatically adapt when GUI key is active
+            /* MAC
+               QWERTY layout with mod-tap for uppercase letters (Mac version)
+               ╭─────────────────────────────────────────╮    ╭──────╮╭─────────────────────────────────────────╮
+               | ESC  |  Q   |  W   |  E   |   R  |   T  |    |VOL UP||  Y   |  U   |  I   |  O   |  P   | BKSP |
+               | TAB  |  A   |  S   |  D   |   F  |   G  |    |VOL DN||  H   |  J   |  K   |  L   |  ;   | ENT  |
+               |SHIFT |  Z   |  X   |  C   |   V  |   B  |    |PREV  ||  N   |  M   |  ,/  |  .?  | BKSP | BKSP |
+               ╰────────────────────╮ MUTE |LCMD  | NUM  |    |NEXT  || LALT | NAV  | MENU ╭────────────────────╯
+                                    ╰────────────────────╯    |PLAY  |╰────────────────────╯
+                                                              ╰──────╯
             */
             bindings = <
                 &kp ESC             &mt RS(Q) Q         &mt RS(W) W           &mt RS(E) E        &mt RS(R) R        &mt RS(T) T          &kp C_VOL_UP                &mt RS(Y) Y             &mt RS(U) U     &mt RS(I) I         &mt RS(O) O         &mt RS(P) P         &kp BSPC
                 &kp TAB             &mt RS(A) A         &mt RS(S) S           &mt RS(D) D        &mt RS(F) F        &mt RS(G) G          &kp C_VOL_DN                &mt RS(H) H             &mt RS(J) J     &mt RS(K) K         &mt RS(L) L         &mt RS(SEMI) SEMI   &kp RETURN
                 &kp LSHIFT          &mt RS(Z) Z         &mt RS(X) X           &mt RS(C) C        &mt RS(V) V        &mt RS(B) B          &kp C_PREV                  &mt RS(N) N             &mt RS(M) M     &comma_comma        &dot_dot            &kp BSPC            &kp BSPC
                                                         &mkp C_MUTE           &sk LGUI           &lt NUMBERS SPACE  &kp LEFT_GUI         &kp C_NEXT                  &kp LALT                &lt NAVIGATION SPACE                &lt MOUSE K_APP
-                                                                                                                                         &kp C_PP // Media play/pause
+                                                                                                                                         &kp C_PP
             >;
 
             label = "MAC";
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; // Rotary encoder volume control
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
-        // Mouse control and media layer
         mouse_layer {
             display-name = "MOUSE";
 
-           /* MOUSE LAYER LAYOUT
-               Left side: Mouse movement and clicks
-               Center: Encoder provides mouse movement
-               Right side: Media controls and scrolling
-               Bottom row: Tab navigation and volume controls
+           /* MOUSE
+               Mouse movement and media controls
+               ╭─────────────────────────────────────────╮    ╭──────╮╭─────────────────────────────────────────╮
+               | ESC  |      |LCLK  | M_UP |RCLK  |      |    | M_UP ||VOL_UP|SCR_UP|      |SCR_DN|      | BKSP |
+               | TAB  |      | M_L  | M_DN | M_R  |      |    | M_DN ||VOL_DN|      |      |      |      | ENT  |
+               |SHIFT |      |      |AL_LFT|AL_RGT|      |    | M_L  || MUTE |TAB_LF|TAB_RT|      |      | BKSP |
+               ╰────────────────────╮ GUI  | GUI  |LCLK  |    | M_R  ||RCLK  |      |      ╭────────────────────╯
+                                    ╰────────────────────╯    |RCLK  |╰────────────────────╯
+                                                              ╰──────╯
             */
             bindings = <
                 &kp ESC             &none               &mkp LCLK             &mmv MOVE_UP        &mkp RCLK          &none                &mmv MOVE_UP                 &kp C_VOL_UP            &msc SCRL_UP         &none                     &msc SCRL_DOWN           &none            &kp BSPC
                 &kp TAB             &none               &mmv MOVE_LEFT        &mmv MOVE_DOWN      &mmv MOVE_RIGHT    &none                &mmv MOVE_DOWN               &kp C_VOL_DN            &none                &none                     &none                    &none            &kp RETURN
                 &kp LSHIFT          &none               &none                 &kp LA(LEFT)        &kp LA(RIGHT)      &none                &mmv MOVE_LEFT               &kp C_MUTE              &tab_left            &tab_right                &none                    &none            &kp BSPC
                                                         &kp LEFT_GUI          &kp LEFT_GUI        &mkp LCLK          &mkp MCLK            &mmv MOVE_RIGHT              &mkp RCLK               &none                &none
-                                                                                                                                          &mkp RCLK // Right click on encoder press
+                                                                                                                                          &mkp RCLK
             >;
 
             label = "MOUSE";
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; // Rotary encoder volume control
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
-        // Navigation and editing layer
         navigation_layer {
             display-name = "NAV";
 
-           /* NAVIGATION LAYER LAYOUT
-               Left side: Page navigation and arrow keys with HOME/END
-               Center: Encoder provides mouse movement for precision tasks
-               Right side: Scrolling, modifiers, and editing functions
-               Cross-platform HOME/END keys adapt automatically
+           /* NAVIGATION
+               Arrow keys, page navigation, and basic editing
+               ╭─────────────────────────────────────────╮    ╭──────╮╭─────────────────────────────────────────╮
+               | ESC  |      |PGDN  |  UP  |PGUP  |      |    | M_UP ||      |SCR_UP|SCR_DN|SCR_DN| BKSP | BKSP |
+               | TAB  | HOME | LEFT | DOWN |RIGHT | END  |    | M_DN ||      |SHIFT |CTRL  |  ALT | ENT  | ENT  |
+               |SHIFT |  Z   |  X   |  C   |  V   |      |    | M_L  || DEL  | INS  |TAB_LF|      | BKSP | BKSP |
+               ╰────────────────────╮LCLK  |LCTRL | GUI  |    | M_R  ||RCLK  |      |      ╭────────────────────╯
+                                    ╰────────────────────╯    |RCLK  |╰────────────────────╯
+                                                              ╰──────╯
             */
             bindings = <
                 &kp ESC             &none               &kp PAGE_DOWN         &kp UP              &kp PAGE_UP        &none                &mmv MOVE_UP                 &none                   &msc SCRL_UP         &msc SCRL_DOWN            &msc SCRL_DOWN           &kp BSPC         &kp BSPC
-                &kp TAB             &home_key           &kp LEFT              &kp DOWN            &kp RIGHT          &end_key             &mmv MOVE_DOWN               &none                   &kp LEFT_SHIFT       &kp LEFT_CONTROL          &kp LALT                 &kp RETURN       &kp RETURN
+                &kp TAB             &kp HOME            &kp LEFT              &kp DOWN            &kp RIGHT          &kp END              &mmv MOVE_DOWN               &none                   &kp LEFT_SHIFT       &kp LEFT_CONTROL          &kp LALT                 &kp RETURN       &kp RETURN
                 &kp LSHIFT          &kp Z               &kp X                 &kp C               &kp V              &none                &mmv MOVE_LEFT               &kp DEL                 &kp INSERT           &tab_left                 &none                    &kp BSPC         &kp BSPC
                                                         &mkp LCLK             &sk LEFT_CONTROL    &kp LEFT_GUI       &mkp MCLK            &mmv MOVE_RIGHT              &mkp RCLK               &none                &none
-                                                                                                                                          &mkp RCLK // Right click on encoder press
+                                                                                                                                          &mkp RCLK
             >;
 
             label = "NAV";
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; // Rotary encoder volume control
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
-        // Numbers, symbols, and function keys layer
         numbers_layer {
             display-name = "NUMBER";
 
-           /* NUMBERS LAYER LAYOUT
-               Top row: Numbers with mod-tap for symbols
-               Middle row: Special characters and programming symbols
-               Bottom row: Function keys F1-F12
-               Optimized for programming and data entry
+           /* NUMBER
+               Numbers, symbols, and function keys
+               ╭─────────────────────────────────────────╮    ╭──────╮╭─────────────────────────────────────────╮
+               |  `~  |  1!  |  2@  |  3#  |  4$  |  5%  |    | M_UP ||  6^  |  7&  |  8*  |  9(  |  0)  | BKSP |
+               | TAB  |  '   |  ?   |  `   |  ç   |  |\  |    | M_DN || CAPS | [{(< | ]}>  | -_   | +=   | ENT  |
+               |  F1  |  F2  |  F3  | F4   |  F5  |  F6  |    | M_L  ||  F7  |  F8  |  F9  | F10  | F11  | F12  |
+               ╰────────────────────╮LCLK  |RCLK  |LCLK  |    | M_R  ||      |      |      ╭────────────────────╯
+                                    ╰────────────────────╯    |RCLK  |╰────────────────────╯
+                                                              ╰──────╯
             */
             bindings = <
                 &mt LS(GRAVE) GRAVE         &mt EXCLAMATION NUMBER_1                &mt AT_SIGN NUMBER_2  &mt HASH NUMBER_3      &mt DOLLAR NUMBER_4      &mt PERCENT NUMBER_5                  &mmv MOVE_UP                 &mt CARET NUMBER_6      &mt AMPERSAND NUMBER_7   &mt ASTERISK NUMBER_8     &mt LEFT_PARENTHESIS NUMBER_9    &mt RIGHT_PARENTHESIS NUMBER_0             &kp BSPC
-                &kp TAB                     &kp SINGLE_QUOTE                        &question_mark        &kp LS(LEFT_BRACKET)   &mt LEFT_SHIFT SEMICOLON &bars                                 &mmv MOVE_DOWN               &kp CAPS                &open_symbol             &close_symbol             &mt MINUS UNDER                  &mt PLUS EQUAL                             &kp RETURN
+                &kp TAB                     &kp SINGLE_QUOTE                        &kp RA(W)             &kp LS(LEFT_BRACKET)   &mt LEFT_SHIFT SEMICOLON &bars                                 &mmv MOVE_DOWN               &kp CAPS                &open_symbol             &close_symbol             &mt MINUS UNDER                  &mt PLUS EQUAL                             &kp RETURN
                 &kp F1                      &kp F2                                  &kp F3                &kp LA(F4)             &kp F5                   &kp F6                                &mmv MOVE_LEFT               &kp F7                  &kp F8                   &kp F9                    &kp F10                          &kp F11                                    &kp F12
                                                                                     &mkp LCLK             &mkp RCLK              &mkp LCLK                &mkp MCLK                             &mmv MOVE_RIGHT              &none                   &none                    &none
-                                                                                                                                                                          &mkp RCLK // Right click on encoder press
+                                                                                                                                                                          &mkp RCLK
             >;
 
             label = "NUMBER";
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; // Rotary encoder volume control
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
-        // Configuration and system control layer
         config_layer {
             display-name = "CONFIG";
 
-           /* CONFIG LAYER LAYOUT
-               Bluetooth management, layer switching, and system controls
-               Left side: Bluetooth profiles and system functions
-               Right side: Layer switching and connectivity options
-               Access via A+S+D+F combo for safety
+           /* CONFIG
+               Bluetooth, output, and system configuration
+               ╭─────────────────────────────────────────╮    ╭──────╮╭─────────────────────────────────────────╮
+               |BTCLR | BT1  | BT2  | BT3  | BT4  | BT5  |    |      || WIN  | MAC  |      |      |      |      |
+               | TAB  |      |      |      |      |      |    |      ||      |      |      |      |      |      |
+               |SHIFT |      |      |      |      |BOOT  |    |      || USB  | BLE  |      |      |      |      |
+               ╰────────────────────╮      |      |      |    |      ||      |      |      ╭────────────────────╯
+                                    ╰────────────────────╯    |      |╰────────────────────╯
+                                                              ╰──────╯
             */
             bindings = <
                 &bt BT_CLR          &bt BT_SEL 0        &bt BT_SEL 1          &bt BT_SEL 2       &bt BT_SEL 3       &bt BT_SEL 4         &none                       &to WIN                 &to MAC             &none                     &none                    &none            &none
-             // Clear all BT      // Profile 0:        // Profile 1:          // Profile 2:     // Profile 3:     // Profile 4:       // Encoder inactive        // Switch to Windows     // Switch to Mac
-             // connections       // Work Laptop       // Personal PC         // Tablet         // Phone          // Gaming PC
+             // Clear all BT      // Profile 0:        // Profile 1:          // Profile 2:     // Profile 3:     // Profile 4:
+             // connections       // Work Laptop       // Personal PC         // Tablet         // Phone          // Other devices
                 &kp TAB             &none               &none                 &none              &none              &none                &none                       &none                   &none               &none                     &none                    &none            &none
                 &kp LSHIFT          &none               &none                 &none              &none              &bootloader          &none                       &out OUT_USB            &out OUT_BLE        &none                     &none                    &none            &none
-             //                                                                                  // Flash firmware                      // Force USB output      // Force Bluetooth
+             //                                                                                  // Flash firmware
                                                         &none                 &none              &none              &none                &none                       &none                   &none               &none
-                                                                                                                                          &none // Encoder press inactive
+                                                                                                                                          &none
             >;
 
             label = "CONFIG";
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; // Rotary encoder volume control
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
     };
 };
