@@ -162,11 +162,11 @@ layers:
   - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:keyboard-tab$$
-  - {t: HOME, s: 'Gui+$$mdi:arrow-left-bold$$'}
+  - HOME
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-right-bold$$
-  - {t: END, s: 'Gui+$$mdi:arrow-right-bold$$'}
+  - END
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:apple-keyboard-shift$$
@@ -212,7 +212,7 @@ layers:
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:keyboard-tab$$
   - {t: '''', s: '"'}
-  - {t: AltGr+W, s: Sft+/}
+  - AltGr+W
   - {t: 'Sft+[', s: 'Sft+{'}
   - {t: ;, h: '$$mdi:apple-keyboard-shift$$', s: ':'}
   - '&bars'
