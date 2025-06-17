@@ -8,10 +8,11 @@
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20
 
-#define BASE 0
-#define MOUSE 1
-#define NAVIGATION 2
-#define NUMBERS 3
+#define WIN 0
+#define MAC 1
+#define MOUSE 2
+#define NAVIGATION 3
+#define NUMBERS 4
 
 &mmv {
 	time-to-max-speed-ms = <500>;
@@ -88,10 +89,10 @@
     keymap {
         compatible = "zmk,keymap";
 
-        base_layer {
-            display-name = "BASE";
+        win_layer {
+            display-name = "WIN";
 
-            /* BASE
+            /* WIN
                QWERTY layout with mod-tap for uppercase letters
                ╭─────────────────────────────────────────╮    ╭──────╮╭─────────────────────────────────────────╮
                | ESC  |  Q   |  W   |  E   |   R  |   T  |    |VOL UP||  Y   |  U   |  I   |  O   |  P   | BKSP |
@@ -109,7 +110,32 @@
                                                                                                                                          &kp C_PP
             >;
 
-            label = "QWERTY";
+            label = "WIN";
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+        };
+
+        mac_layer {
+            display-name = "MAC";
+
+            /* MAC
+               QWERTY layout with mod-tap for uppercase letters (Mac version)
+               ╭─────────────────────────────────────────╮    ╭──────╮╭─────────────────────────────────────────╮
+               | ESC  |  Q   |  W   |  E   |   R  |   T  |    |VOL UP||  Y   |  U   |  I   |  O   |  P   | BKSP |
+               | TAB  |  A   |  S   |  D   |   F  |   G  |    |VOL DN||  H   |  J   |  K   |  L   |  ;   | ENT  |
+               |SHIFT |  Z   |  X   |  C   |   V  |   B  |    |PREV  ||  N   |  M   |  ,/  |  .?  | BKSP | BKSP |
+               ╰────────────────────╮ MUTE |LCMD  | NUM  |    |NEXT  || LALT | NAV  | MENU ╭────────────────────╯
+                                    ╰────────────────────╯    |PLAY  |╰────────────────────╯
+                                                              ╰──────╯
+            */
+            bindings = <
+                &kp ESC             &mt RS(Q) Q         &mt RS(W) W           &mt RS(E) E        &mt RS(R) R        &mt RS(T) T          &kp C_VOL_UP                &mt RS(Y) Y             &mt RS(U) U     &mt RS(I) I         &mt RS(O) O         &mt RS(P) P         &kp BSPC
+                &kp TAB             &mt RS(A) A         &mt RS(S) S           &mt RS(D) D        &mt RS(F) F        &mt RS(G) G          &kp C_VOL_DN                &mt RS(H) H             &mt RS(J) J     &mt RS(K) K         &mt RS(L) L         &mt RS(SEMI) SEMI   &kp RETURN
+                &kp LSHIFT          &mt RS(Z) Z         &mt RS(X) X           &mt RS(C) C        &mt RS(V) V        &mt RS(B) B          &kp C_PREV                  &mt RS(N) N             &mt RS(M) M     &comma_comma        &dot_dot            &kp BSPC            &kp BSPC
+                                                        &mkp C_MUTE           &sk LEFT_CMD       &lt NUMBERS SPACE  &kp LEFT_GUI         &kp C_NEXT                  &kp LALT                &lt NAVIGATION SPACE                &lt MOUSE K_APP
+                                                                                                                                         &kp C_PP
+            >;
+
+            label = "MAC";
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
