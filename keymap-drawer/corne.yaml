@@ -90,7 +90,7 @@ layers:
   - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:backspace$$', type: backspace}
   - '&mkp C_MUTE'
-  - {t: LEFT CMD, h: '$$mdi:gesture-tap-hold$$'}
+  - {t: '$$mdi:apple-keyboard-control$$', h: '$$mdi:gesture-tap-hold$$'}
   - {t: '$$mdi:keyboard-space$$', h: NUMBER}
   - $$mdi:apple-keyboard-command$$
   - $$mdi:skip-next$$
