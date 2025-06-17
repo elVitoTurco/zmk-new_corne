@@ -13,6 +13,7 @@
 #define MOUSE 2
 #define NAVIGATION 3
 #define NUMBERS 4
+#define CONFIG 5
 
 &mmv {
 	time-to-max-speed-ms = <500>;
@@ -24,6 +25,16 @@
 };
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_config {
+            timeout-ms = <50>;
+            key-positions = <14 15 16 17>; // A, S, D, F positions
+            bindings = <&mo CONFIG>;
+            layers = <WIN MAC>;
+        };
+    };
+
     behaviors {
         mmv {
             acceleration-exponent = <1>;
@@ -131,7 +142,7 @@
                 &kp ESC             &mt RS(Q) Q         &mt RS(W) W           &mt RS(E) E        &mt RS(R) R        &mt RS(T) T          &kp C_VOL_UP                &mt RS(Y) Y             &mt RS(U) U     &mt RS(I) I         &mt RS(O) O         &mt RS(P) P         &kp BSPC
                 &kp TAB             &mt RS(A) A         &mt RS(S) S           &mt RS(D) D        &mt RS(F) F        &mt RS(G) G          &kp C_VOL_DN                &mt RS(H) H             &mt RS(J) J     &mt RS(K) K         &mt RS(L) L         &mt RS(SEMI) SEMI   &kp RETURN
                 &kp LSHIFT          &mt RS(Z) Z         &mt RS(X) X           &mt RS(C) C        &mt RS(V) V        &mt RS(B) B          &kp C_PREV                  &mt RS(N) N             &mt RS(M) M     &comma_comma        &dot_dot            &kp BSPC            &kp BSPC
-                                                        &mkp C_MUTE           &sk LEFT_CONTROL   &lt NUMBERS SPACE  &kp LEFT_GUI         &kp C_NEXT                  &kp LALT                &lt NAVIGATION SPACE                &lt MOUSE K_APP
+                                                        &mkp C_MUTE           &sk LGUI           &lt NUMBERS SPACE  &kp LEFT_GUI         &kp C_NEXT                  &kp LALT                &lt NAVIGATION SPACE                &lt MOUSE K_APP
                                                                                                                                          &kp C_PP
             >;
 
@@ -212,6 +223,31 @@
 
             label = "NUMBER";
             sensor-bindings = <&scroll_encoder>;
+        };
+
+        config_layer {
+            display-name = "CONFIG";
+
+           /* CONFIG
+               Bluetooth, output, and system configuration
+               ╭─────────────────────────────────────────╮    ╭──────╮╭─────────────────────────────────────────╮
+               |BTCLR | BT1  | BT2  | BT3  | BT4  | BT5  |    |      || WIN  | MAC  |      |      |      |      |
+               | TAB  |      |      |      |      |      |    |      ||      |      |      |      |      |      |
+               |SHIFT |      |      |      |      |      |    |      || USB  | BLE  |      |      |      |      |
+               ╰────────────────────╮      |      |      |    |      ||      |      |      ╭────────────────────╯
+                                    ╰────────────────────╯    |      |╰────────────────────╯
+                                                              ╰──────╯
+            */
+            bindings = <
+                &bt BT_CLR          &bt BT_SEL 0        &bt BT_SEL 1          &bt BT_SEL 2       &bt BT_SEL 3       &bt BT_SEL 4         &none                       &to WIN                 &to MAC             &none                     &none                    &none            &none
+                &kp TAB             &none               &none                 &none              &none              &none                &none                       &none                   &none               &none                     &none                    &none            &none
+                &kp LSHIFT          &none               &none                 &none              &none              &none                &none                       &out OUT_USB            &out OUT_BLE        &none                     &none                    &none            &none
+                                                        &none                 &none              &none              &none                &none                       &none                   &none               &none
+                                                                                                                                          &none
+            >;
+
+            label = "CONFIG";
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
     };
 };
