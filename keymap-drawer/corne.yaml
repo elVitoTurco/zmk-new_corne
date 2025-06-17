@@ -133,8 +133,8 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - $$mdi:volume-off$$
-  - Ctl+PgUp
-  - Ctl+PgDn
+  - {t: Ctl+PgUp, s: 'Gui+Alt+$$mdi:arrow-left-bold$$'}
+  - {t: Ctl+PgDn, s: 'Gui+Alt+$$mdi:arrow-right-bold$$'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:backspace$$', type: backspace}
@@ -183,7 +183,7 @@ layers:
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - $$mdi:backspace-reverse-outline$$
   - Ins
-  - Ctl+PgDn
+  - {t: Ctl+PgUp, s: 'Gui+Alt+$$mdi:arrow-left-bold$$'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:backspace$$', type: backspace}
